@@ -45,23 +45,40 @@
   </nav>
   <nav id="site-navigation" class="site-navigation">
     <div class="site-navigation__left">
-      <img class="ernie-ball-logo" src="./img/eb-logo.svg" alt="Ernie Ball Logo">
+      <a href="#" class="site-navigation__home">
+        <img class="ernie-ball-logo" src="./img/eb-logo.svg" alt="Ernie Ball Logo">
+      </a>
     </div>
     <div class="site-navigation__center">
       <ul class="site-navigation__list">
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">store</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">store</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">store</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">store</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">store</a></li>
+        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Strings</a></li>
+        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Accessories</a></li>
+        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Merch</a></li>
+        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Artists</a></li>
+        <li class="site-navigation__item"><a class="site-navigation__link" href="#">About</a></li>
+        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Culture</a></li>
       </ul>
     </div>
     <div class="site-navigation__right">
-      b
+      <ul class="site-navigation__list-alt">
+        <li class="site-navigation__item-alt">
+          <button class="site-navigation__button">
+            <img src="./img/search.svg" alt="">
+          </button>
+        </li>
+        <li class="site-navigation__item-alt">
+          <button class="site-navigation__button">
+            <img src="./img/cart.svg" alt="">
+            <div class="site-navigation__button-badge">
+              <span class="site-navigation__button-badge-count">1</span>
+            </div>
+          </button>
+        </li>
+      </ul>
     </div>
   </nav>
 </div>
-<div class="null-pointer">
+<div class="flyout__locale">
   <div data-lang-dropdown-list class="lang-select__dropdown">
     <ul class="lang-select__options">
       <li>
@@ -117,6 +134,8 @@
     </ul>
   </div>
 </div>
+<div class="flyout__desktop-nav"></div>
+<div class="flyout__mobile-nav"></div>
 </body>
 
 </html>
