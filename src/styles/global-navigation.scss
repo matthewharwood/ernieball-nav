@@ -17,22 +17,19 @@
   @extend %full-height;
   display: flex;
   order: 2;
-  flex: 0;
-
+  flex: 1;
 
   @include bp(sm) {
-    flex: 1;
     order: 0;
   }
 }
 
 .global-navigation__item {
   @extend %flex-center;
-
-  width: rem($site-nav-item-width);
   border-left: 1px solid $gray-2;
-
+  width: 100%;
   @include bp(sm) {
+    width: rem($site-nav-item-width);
     border-left: 0;
     border-right: 1px solid $gray-2;
   }
@@ -58,7 +55,6 @@
 
   display: flex;
   position: relative;
-  width: 100%;
 
   @include bp(sm) {
     min-width: 120px;
@@ -95,13 +91,11 @@
   width: percentage(1/3);
   padding-right: 16px;
 
-
   @include bp(sm) {
     padding-right: 6px;
 
   }
 }
-
 
 .lang-select__country {
   @extend %full-height;
@@ -115,7 +109,6 @@
     @include show(inline);
   }
 }
-
 
 .lang-select__caret {
   width: 12px;
@@ -137,16 +130,16 @@
 
 .lang-select__dropdown {
   @extend %hide;
-  position: absolute;
+  position: relative;
   background: $white;
-  box-shadow: 1px 3px 4px rgba(0,0,0,0.12);
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.12);
   top: calc(100% + 1px);
   border-left: 1px solid $gray-2;
-  padding: 12px 0 12px 0px;
+  padding: 12px 0 12px 0;
   width: 100%;
 
   @include bp(sm) {
-    box-shadow: -1px 3px 4px rgba(0,0,0,0.12);
+    box-shadow: -1px 3px 4px rgba(0, 0, 0, 0.12);
 
   }
 }
@@ -166,14 +159,17 @@
   font-size: 11px;
   text-transform: capitalize;
   color: $black;
-  padding: 6px 16px;
+  padding: 6px 12px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left;
+
   @include bp(sm) {
     padding: 6px 34px;
 
   }
+
   &:hover {
     background-color: $ernieBallPrimary;
     color: $white;
@@ -181,12 +177,12 @@
 }
 
 .null-pointer {
-  position: relative;
+  position: absolute;
   display: flex;
-  width: 100%;
+  width: 200px;
 
   @include bp(sm) {
-    width: auto;
+    right: 0;
   }
 }
 
