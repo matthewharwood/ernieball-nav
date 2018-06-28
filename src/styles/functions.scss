@@ -7,19 +7,29 @@ $font: 'Montserrat', sans-serif;
 
 @mixin bp($point) {
   @if $point == lg {
-    @media (max-width: 1600px) { @content; }
-  }
-  @else if $point == desktop {
-    @media (max-width: 1025px) { @content; }
-  }
-  @else if $point == tablet {
-    @media (min-width: 768px) and (max-width: 1024px)  { @content; }
-  }
-  @else if $point == sm {
-    @media (min-width: 767px)  { @content; }
-  }
-  @else if $point == smH {
-    @media (max-height: 420px)  { @content; }
+    @media (max-width: 1600px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (max-width: 1025px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == xsm {
+    @media (min-width: 767px) {
+      @content;
+    }
+  } @else if $point == smH {
+    @media (max-height: 420px) {
+      @content;
+    }
   }
 }
 
