@@ -1,11 +1,81 @@
 @import './vars';
 @import './colors';
 @import './functions';
-@import './placeholders';
 
 .site-navigation {
-  height: rem($site-nav-height);
+  @include font();
+
+  border-bottom: 1px solid $gray-2;
   width: 100%;
   display: flex;
-  border-bottom: 1px solid $gray-2;
+  background: $white;
+  height: rem($site-nav-height);
+  padding: 6px 16px;
+}
+
+.ernie-ball-logo {
+  margin-top: -6px;
+}
+
+.site-navigation__left {
+  display: flex;
+  flex-basis: 150px;
+}
+
+.site-navigation__center {
+  @include font-bold();
+
+  text-transform: uppercase;
+  font-size: rem(11);
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-navigation__list {
+  display: flex;
+  list-style-type: none;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.site-navigation__item {
+  display: flex;
+  height: 100%;
+  position: relative;
+
+  &:hover:after {
+    content: '';
+    background: $ernieBallPrimary;
+    bottom: -6px;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+}
+
+.site-navigation__link {
+  text-decoration: none;
+  padding: 0 16px;
+  color: $black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &:hover {
+  }
+
+
+}
+
+.site-navigation__right {
+  display: flex;
+  flex-basis: 150px;
 }

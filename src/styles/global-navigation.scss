@@ -1,11 +1,59 @@
 @import './vars';
 @import './colors';
 @import './functions';
-@import './placeholders';
-@import './global';
+
+%clear-space {
+  margin: 0;
+  padding: 0;
+}
+
+%center-align {
+  justify-content: center;
+  align-items: center;
+}
+
+%full-width {
+  width: 100%;
+  position: relative;
+}
+
+%hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+%unstyled-list {
+  @extend %clear-space;
+  list-style-type: none;
+}
+
+%show {
+  display: block !important;
+  visibility: visible !important;
+}
+
+%full-height {
+  height: 100%;
+}
+
+%full-container {
+  @extend %full-width;
+  @extend %full-height;
+}
+
+%view-height {
+  height: 100vh;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .global-navigation {
   @extend %full-width;
+  @include font();
 
   border-bottom: 1px solid $gray-2;
   height: rem($global-nav-height);
@@ -100,6 +148,8 @@
 .lang-select__country {
   @extend %full-height;
   @extend %center-align;
+  @include font-medium();
+
 
   display: inline;
   position: relative;
@@ -180,6 +230,7 @@
   position: absolute;
   display: flex;
   width: 200px;
+  top: 41px;
 
   @include bp(sm) {
     right: 0;

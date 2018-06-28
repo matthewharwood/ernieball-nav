@@ -1,4 +1,5 @@
 $browser-context: 16; // Default
+$font: 'Montserrat', sans-serif;
 
 @function rem($pixels, $context: $browser-context) {
   @return #{$pixels/$context}rem;
@@ -30,4 +31,18 @@ $browser-context: 16; // Default
 @mixin show($display:flex) {
   display: $display !important;
   visibility: visible !important;
+}
+
+@mixin font() {
+  font-family: $font
+}
+
+@mixin font-medium() {
+  @include font();
+  font-weight: 500;
+}
+
+@mixin font-bold() {
+  @include font();
+  font-weight: 700;
 }
