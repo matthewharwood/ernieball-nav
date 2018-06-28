@@ -1,0 +1,33 @@
+$browser-context: 16; // Default
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+@mixin bp($point) {
+  @if $point == lg {
+    @media (max-width: 1600px) { @content; }
+  }
+  @else if $point == desktop {
+    @media (max-width: 1025px) { @content; }
+  }
+  @else if $point == tablet {
+    @media (min-width: 768px) and (max-width: 1024px)  { @content; }
+  }
+  @else if $point == sm {
+    @media (min-width: 767px)  { @content; }
+  }
+  @else if $point == smH {
+    @media (max-height: 420px)  { @content; }
+  }
+}
+
+@mixin hide() {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@mixin show($display:flex) {
+  display: $display !important;
+  visibility: visible !important;
+}
