@@ -6,11 +6,13 @@
   <title>
     Ernieball Navigation
   </title>
+  <!-- I'm using montserrat because it's nearly identical to gotham and free.  -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 </head>
 
 <body>
 <div class="grid-container">
+  <!-- START: Global Navigation Bar -->
   <nav id="global-navigation" class="global-navigation">
     <div class="global-navigation__left">
       <div class="global-navigation__item">
@@ -43,6 +45,9 @@
       </button>
     </div>
   </nav>
+  <!-- END: Global Navigation Bar -->
+
+  <!-- START: Site Navigation Bar -->
   <nav id="site-navigation" class="site-navigation">
     <div class="site-navigation__left">
       <a href="#" class="site-navigation__home">
@@ -51,12 +56,24 @@
     </div>
     <div class="site-navigation__center">
       <ul class="site-navigation__list hide-mobile">
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Strings</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Accessories</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Merch</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Artists</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">About</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Culture</a></li>
+        <li data-site-item-id="0" class="site-navigation__item">
+          <a class="site-navigation__link" href="#">Strings</a>
+        </li>
+        <li data-site-item-id="1" class="site-navigation__item">
+          <a class="site-navigation__link" href="#">Accessories</a>
+        </li>
+        <li data-site-item-id="2" class="site-navigation__item">
+          <a class="site-navigation__link" href="#">Merch</a>
+        </li>
+        <li data-site-item-id="3" class="site-navigation__item">
+          <a class="site-navigation__link" href="#">Artists</a>
+        </li>
+        <li data-site-item-id="4" class="site-navigation__item">
+          <a class="site-navigation__link" href="#">About</a>
+        </li>
+        <li data-site-item-id="5" class="site-navigation__item">
+          <a class="site-navigation__link" href="#">Culture</a>
+        </li>
       </ul>
     </div>
     <div class="site-navigation__right">
@@ -82,7 +99,15 @@
       </ul>
     </div>
   </nav>
+  <!-- END: Site Navigation Bar -->
 </div>
+<!--
+
+  After this point we have only overlay templates.
+  Overlays have need to attach themselves to a relative point but must be outside of any parent for sizing purposes.
+
+-->
+<!-- START: Global Navigation Bar Locale Flyout -->
 <div class="flyout__locale">
   <div data-lang-dropdown-list class="lang-select__dropdown">
     <ul class="lang-select__options">
@@ -139,8 +164,26 @@
     </ul>
   </div>
 </div>
-<div class="flyout__desktop-nav"></div>
+<!-- END: Global Navigation Bar Locale Flyout -->
+
+<!-- START: Site Navigation Bar Desktop Flyout -->
+<nav class="flyout__desktop-nav">
+  <div class="flyout__container">
+    <div class="flyout__column flyout__column-stamp">
+  0
+    </div>
+    <div class="flyout__column">1</div>
+    <div class="flyout__column">2</div>
+    <div class="flyout__column">3</div>
+    <div class="flyout__column">4</div>
+  </div>
+</nav>
+<!-- END: Site Navigation Bar Desktop Flyout -->
+
+<!-- START: Site Navigation Bar Mobile Flyout -->
 <div class="flyout__mobile-nav"></div>
+<!-- END: Site Navigation Bar Mobile Flyout -->
+
 </body>
 
 </html>
