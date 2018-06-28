@@ -1,0 +1,11 @@
+@import './vars';
+@import './colors';
+@import './functions';
+@import './placeholders';
+
+.site-navigation {
+  height: rem($site-nav-height);
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid $gray-2;
+}
