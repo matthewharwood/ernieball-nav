@@ -244,3 +244,18 @@
     @include show(inline);
   }
 }
+
+.hide-mobile {
+  @extend %hide;
+
+  @include bp(sm) {
+    @include show();
+  }
+}
+.show-mobile {
+  @include show();
+
+  @include bp(sm) {
+    @include hide();
+  }
+}

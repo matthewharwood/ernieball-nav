@@ -127,6 +127,7 @@
   background: $ernieBallPrimary;
   border-radius: 20px;
   bottom: 6px;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.12);
   display: flex;
   font-size: 11px;
   height: 20px;
@@ -135,14 +136,14 @@
   right: 6px;
   text-align: center;
   width: 20px;
+}
 
-  .site-navigation__button-badge-count {
-    align-items: center;
-    color: $white;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-    @include font-bold();
-  }
+.site-navigation__button-badge-count {
+  align-items: center;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  @include font-bold();
 }
