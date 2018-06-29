@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/scripts/app.ts" line="58" />
+    <bookmark url="file://$PROJECT_DIR$/src/scripts/app.ts" line="65" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1f3cab-00ad-4f0c-91e7-75ccae8e160c" name="Default" comment="">
@@ -57,8 +57,8 @@
       <file leaf-file-name="app.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scripts/app.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            <state relative-caret-position="396">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
@@ -121,7 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>width: 100%</find>
       <find>.global-navigation__right</find>
       <find>right</find>
       <find>em</find>
@@ -151,6 +150,7 @@
       <find>active</find>
       <find>500</find>
       <find>data-site-outlet</find>
+      <find>remove</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -344,12 +344,12 @@
       <updated>1529981328496</updated>
       <workItem from="1529981331577" duration="14744000" />
       <workItem from="1530198301254" duration="827000" />
-      <workItem from="1530204008762" duration="21258000" />
+      <workItem from="1530204008762" duration="22544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39296000" />
+    <option name="totallyTimeSpent" value="40582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -726,8 +726,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/app.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        <state relative-caret-position="396">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
