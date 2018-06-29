@@ -48,7 +48,7 @@
   height: 100%;
   position: relative;
 
-  &:hover:after {
+  &.active:after {
     background: $ernieBallPrimary;
     bottom: -6px;
     content: '';
