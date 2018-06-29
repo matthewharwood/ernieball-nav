@@ -48,11 +48,7 @@ const mapLinksOutlets = (ls: NodeListOf<HTMLElement>, os: NodeListOf<HTMLElement
   return map;
 };
 
-
 const linksOutletsMap = mapLinksOutlets(links, outlets);
-
-
-
 let timeout: any = null;
 
 const setRootsLinkValue = (id = '*') => {
@@ -60,11 +56,10 @@ const setRootsLinkValue = (id = '*') => {
 };
 
 const setActiveLink = (id = '*') => {
-  const linkId = parseInt(id, 10);
+  const prevId = rootSiteLink.attributes.getNamedItem(DataAttrs.LINK).value;
+  linksOutletsMap.forEach(l => l.get(DataAttrs.LINK).classList.remove(ClassNames.ACTIVE));
 
-  if(isNaN(linkId)) {
-    linksOutletsMap.forEach(l => l.get(DataAttrs.LINK).classList.remove(ClassNames.ACTIVE))
-  } else {
+  if(!isNaN(parseInt(prevId, 10))) {
     linksOutletsMap.get(id).get(DataAttrs.LINK).classList.add(ClassNames.ACTIVE);
   }
 };
