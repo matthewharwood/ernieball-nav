@@ -9,20 +9,32 @@ dropdown.addEventListener("click", (e) => {
  * Primary Nav Fly out.
  */
 const ClassNames = {
-  ACTIVE: "active"
+  ACTIVE: "active",
+  DESKTOP_NAV: "flyout__desktop-nav"
 };
 
-const overlay = document.querySelector(".flyout__desktop-nav") as HTMLElement;
-const links = document.querySelectorAll("[data-site-link]") as NodeListOf<HTMLElement>;
-const outlets = document.querySelectorAll("[data-site-outlet]") as NodeListOf<HTMLElement>;
+const DataAttrs = {
+  LINK: "data-site-link",
+  OUTLET: "data-site-outlet"
+};
 
-const mapLinksOutlets = (ls: NodeListOf<HTMLElement>, os: NodeListOf<HTMLElement>) => {
+const overlay = document.querySelector(`.${ClassNames.DESKTOP_NAV}`) as HTMLElement;
+const links = document.querySelectorAll(`[${DataAttrs.LINK}]`) as NodeListOf<HTMLElement>;
+const outlets = document.querySelectorAll(`[${DataAttrs.OUTLET}]`) as NodeListOf<HTMLElement>;
+
+interface ILinksOutletsMap {
+  elementOutlet: HTMLElement;
+  linksOutlet: HTMLElement;
+  id: number;
+}
+
+const mapLinksOutlets = (ls: NodeListOf<HTMLElement>, os: NodeListOf<HTMLElement>): Map<string, Map<string, HTMLElement>> => {
   const map = new Map();
 
   Array.from(ls).forEach(l => {
     Array.from(os).forEach(o => {
-      if (o.attributes.getNamedItem("data-site-outlet").value === l.attributes.getNamedItem("data-site-link").value) {
-        const val = l.attributes.getNamedItem("data-site-link").value;
+      if (o.attributes.getNamedItem(DataAttrs.OUTLET).value === l.attributes.getNamedItem(DataAttrs.LINK).value) {
+        const val = l.attributes.getNamedItem(DataAttrs.LINK).value;
         map.set(val, new Map().set("outlet", o).set("link", l));
       }
     });
@@ -32,11 +44,7 @@ const mapLinksOutlets = (ls: NodeListOf<HTMLElement>, os: NodeListOf<HTMLElement
 const linksOutletsMap = mapLinksOutlets(links, outlets);
 console.log(linksOutletsMap);
 
-interface ILinksOutletsMap {
-  elementOutlet: HTMLElement;
-  linksOutlet: HTMLElement;
-  id: number;
-}
+
 
 
 let timeout: any = null;
