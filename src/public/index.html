@@ -56,22 +56,22 @@
     </div>
     <div class="site-navigation__center">
       <ul class="site-navigation__list hide-mobile">
-        <li data-site-item-id="0" class="site-navigation__item">
+        <li data-site-link="0" class="site-navigation__item">
           <a class="site-navigation__link" href="#">Strings</a>
         </li>
-        <li data-site-item-id="1" class="site-navigation__item">
+        <li data-site-link="1" class="site-navigation__item">
           <a class="site-navigation__link" href="#">Accessories</a>
         </li>
-        <li data-site-item-id="2" class="site-navigation__item">
+        <li data-site-link="2" class="site-navigation__item">
           <a class="site-navigation__link" href="#">Merch</a>
         </li>
-        <li data-site-item-id="3" class="site-navigation__item">
+        <li data-site-link="3" class="site-navigation__item">
           <a class="site-navigation__link" href="#">Artists</a>
         </li>
-        <li data-site-item-id="4" class="site-navigation__item">
+        <li data-site-link="4" class="site-navigation__item">
           <a class="site-navigation__link" href="#">About</a>
         </li>
-        <li data-site-item-id="5" class="site-navigation__item">
+        <li data-site-link="5" class="site-navigation__item">
           <a class="site-navigation__link" href="#">Culture</a>
         </li>
       </ul>
@@ -167,8 +167,8 @@
 <!-- END: Global Navigation Bar Locale Flyout -->
 
 <!-- START: Site Navigation Bar Desktop Flyout -->
-<nav class="flyout__desktop-nav ">
-  <div class="flyout__container">
+<nav class="flyout__desktop-nav" data-site-link>
+  <div class="flyout__container" data-site-outlet="0">
     <div class="flyout__column flyout__column-stamp">
       <ul class="flyout__group">
         <li class="flyout__group-item">
@@ -263,46 +263,86 @@
           <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">See all</a>
+          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
         </li>
       </ul>
     </div>
+
     <div class="flyout__column">
       <ul class="flyout__group">
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="secondary-list-item--flat">Category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Category 1</a>
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
 
+        <li class="flyout__group-item">
+          <a href="#" class="secondary-list-item">Category 2</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item">Sub-category 1</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
+        </li>
       </ul>
     </div>
     <div class="flyout__column">
@@ -378,7 +418,30 @@
           <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">See all</a>
+          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flyout__container" data-site-outlet="1">
+    <div class="flyout__column flyout__column-stamp">
+      <ul class="flyout__group">
+        <li class="flyout__group-item">
+          <a href="#" class="secondary-list-item--flat ">New Releases</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
+        </li>
+        <li class="flyout__group-item">
+          <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
+        </li>
+        <li>
+          <a href="#" class="secondary-list-item--flat promo-item">
+            <img src="./img/pedal.png" alt="">
+          </a>
         </li>
       </ul>
     </div>
@@ -455,7 +518,7 @@
           <a href="#" class="tertiary-list-item">Sub-category 1</a>
         </li>
         <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">See all</a>
+          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
         </li>
       </ul>
     </div>
