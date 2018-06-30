@@ -1,0 +1,45 @@
+@import './vars';
+@import './colors';
+@import './functions';
+
+$column-gutter-1: 40;
+$column-gutter-2: $column-gutter-1 * 2;
+$column-width: 210;
+$font-size: 12;
+// TODO add scroll and test !!!
+
+.flyout__mobile-overlay {
+  background: transparentize($white, .1);
+  bottom: 0;
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: $close-overlay-z;
+
+  &.active {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.flyout__mobile-nav {
+  background: $gray-2;
+  display: none;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  width: 80%;
+  z-index: $mobile-menu-z;
+
+  &.active {
+    display: flex;
+    visibility: visible;
+  }
+}

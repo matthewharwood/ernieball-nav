@@ -92,7 +92,7 @@
           </button>
         </li>
         <li class="site-navigation__item-alt show-mobile">
-          <button class="site-navigation__button">
+          <button class="site-navigation__button" data-site-mobile-trigger>
             <img src="./img/hamburger.svg" alt="">
           </button>
         </li>
@@ -1005,7 +1005,10 @@
 <!-- END: Site Navigation Bar Desktop Flyout -->
 
 <!-- START: Site Navigation Bar Mobile Flyout -->
-<div class="flyout__mobile-nav"></div>
+<div class="flyout__mobile-overlay" data-site-m-close></div>
+<div class="flyout__mobile-nav" data-site-m-root>
+
+</div>
 <!-- END: Site Navigation Bar Mobile Flyout -->
 
 </body>
