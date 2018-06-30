@@ -1,7 +1,20 @@
 import { ClassNames, DataAttrs, EventTypes } from "./enums";
 
-const LinksSelectors = {
-  PRIMARY: "site-navigation__link"
+const RouteMapKeys = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  TERTIARY: 'tertiary',
+};
+const LinkClasses = {
+  PRIMARY: "site-navigation__link",
+  SECONDARY: "secondary-list-item--flat",
+  TERTIARY: "tertiary-list-item",
+};
+
+const LinkSelectors = {
+  PRIMARY: document.querySelectorAll(`.${LinkClasses.PRIMARY}`),
+  SECONDARY: document.querySelectorAll(`.${LinkClasses.SECONDARY}`),
+  TERTIARY: document.querySelectorAll(`.${LinkClasses.TERTIARY}`),
 };
 
 export class MobileNav {
@@ -24,7 +37,33 @@ export class MobileNav {
     Array.from(mobileNavTriggerClose).forEach(t => t.addEventListener(EventTypes.CLICK, closeMobileHandler));
 
 
-    const primaryLinks = document.querySelectorAll(`.${LinksSelectors.PRIMARY}`);
-    console.log(primaryLinks);
+
+    // const primaryLinks.map(l => l.textContent);
+    const RouteMap = new Map();
+    // Set up main keys.
+    RouteMap.set(RouteMapKeys.PRIMARY, new Map())
+            .set(RouteMapKeys.SECONDARY, new Map())
+            .set(RouteMapKeys.TERTIARY, new Map());
+
+    // Set up primary
+    Array.from(LinkSelectors.PRIMARY).forEach((link, i) => {
+      RouteMap.get(RouteMapKeys.PRIMARY).set(i, link.textContent);
+    });
+    //
+    Array.from(LinkSelectors.SECONDARY).forEach((link, i) => {
+      RouteMap.get(RouteMapKeys.SECONDARY).set(i, link.textContent);
+    });
+
+    Array.from(LinkSelectors.TERTIARY).forEach((link, i) => {
+      RouteMap.get(RouteMapKeys.TERTIARY).set(i, link.textContent);
+    });
+
+    console.log(RouteMap);
   }
 }
+
+// const map = {
+//   primary: {0: 'strings', 1: 'something else' },
+//   secondary: {0: {0: 'category 1', 1: 'category 2'}},
+//   tertiary: {0: {0: 'subCateogry 1'}}
+// };
