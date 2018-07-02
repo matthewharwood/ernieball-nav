@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1f3cab-00ad-4f0c-91e7-75ccae8e160c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/mobile-nav.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/mobile-nav.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -77,8 +74,8 @@
       <file leaf-file-name="mobile-nav.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+            <state relative-caret-position="-990">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -123,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.lang-select--anchor</find>
       <find>grid-container</find>
       <find>drop</find>
       <find>lang-select__country</find>
@@ -153,6 +149,7 @@
       <find>hamb</find>
       <find>data-site-m-close</find>
       <find>Sub-Category 1</find>
+      <find>open</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -348,12 +345,12 @@
       <workItem from="1530198301254" duration="827000" />
       <workItem from="1530204008762" duration="22544000" />
       <workItem from="1530327567635" duration="5281000" />
-      <workItem from="1530555767889" duration="9134000" />
+      <workItem from="1530555767889" duration="10042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66508000" />
+    <option name="totallyTimeSpent" value="67416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -743,8 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+        <state relative-caret-position="-990">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
