@@ -5,8 +5,9 @@ import { MobileNav } from "./mobile-nav";
 class NavigationApp {
   public static run() {
     LocaleDropdown.run();
-    MobileNav.run();
+    const routes = MobileNav.run();
     DesktopNav.run();
+    MobileNav.render(routes);
   }
 }
 

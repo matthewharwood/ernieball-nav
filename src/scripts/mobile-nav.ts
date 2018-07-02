@@ -49,8 +49,6 @@ export class MobileNav {
   public static run() {
     const RouteMap = this.createMaps();
     this.createListeners();
-
-
     const setAllRouteMap = (item, i) => {
       const cats = this.getCats(DataAttrs.CATEGORY, i)
         .map(queryAnchors)
@@ -67,6 +65,12 @@ export class MobileNav {
     Array.from(LinkSelectors.PRIMARY, setAllRouteMap);
     console.log(RouteMap);
     return RouteMap;
+  }
+
+  public static render(routes) {
+    console.log(this.primaryTemplate(routes), 1);
+    console.log(this.secondaryTemplate(routes), 2);
+    console.log(this.tertiaryTemplate(routes), 3);
   }
 
   private static close() {
@@ -93,5 +97,76 @@ export class MobileNav {
 
   private static getCats(attr, i) {
     return Array.from(selectByOutlet(LinkSelectors.PRIMARY_OUTLETS[i], attr));
+  }
+
+  private static primaryTemplate(routes) {
+    const listItems = () => {
+      let items = "";
+      routes.get(RouteMapKeys.PRIMARY).forEach(item => {
+        if (item) {
+          items += `
+            <li><a href="${item.href}">${item.label}</a></li>
+          `;
+        }
+      });
+      return items;
+    };
+
+
+    return `
+      <ul>
+        ${listItems()}
+      </ul>
+    `;
+  }
+
+  private static secondaryTemplate(routes) {
+    const listItems = () => {
+      let template = "";
+      routes.get(RouteMapKeys.SECONDARY).forEach(items => {
+        if (items) {
+          for (const item of items) {
+            if (item) {
+              template += `
+                <li><a href="${item.href}">${item.label}</a></li>
+              `;
+            }
+          }
+        }
+      });
+
+      return template;
+    };
+
+
+    return `
+      <ul>
+        ${listItems()}
+      </ul>
+    `;
+  }
+
+  private static tertiaryTemplate(routes) {
+    const listItems = () => {
+      let template = "";
+      routes.get(RouteMapKeys.TERTIARY).forEach(mapItems => {
+        if (mapItems) {
+          Object.keys(mapItems).forEach(key => mapItems[key].forEach(item => {
+            template += `
+              <li><a href="${item.href}">${item.label}</a></li>
+            `;
+          }));
+        }
+      });
+
+      return template;
+    };
+
+
+    return `
+      <ul>
+        ${listItems()}
+      </ul>
+    `;
   }
 }

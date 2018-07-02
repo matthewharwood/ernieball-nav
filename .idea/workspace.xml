@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1f3cab-00ad-4f0c-91e7-75ccae8e160c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/app.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/mobile-nav.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/mobile-nav.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="204" column="39" selection-start-line="204" selection-start-column="39" selection-end-line="204" selection-end-column="64" />
+            <state relative-caret-position="329">
+              <caret line="476" column="32" selection-start-line="476" selection-start-column="32" selection-end-line="476" selection-end-column="48" />
               <folding>
                 <element signature="n#div#1;n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -53,8 +55,8 @@
       <file leaf-file-name="app.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scripts/app.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="231">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -74,8 +76,8 @@
       <file leaf-file-name="mobile-nav.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-990">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="66">
+              <caret line="150" column="18" selection-start-line="150" selection-start-column="10" selection-end-line="150" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -120,8 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>grid-container</find>
-      <find>drop</find>
       <find>lang-select__country</find>
       <find>lang-select</find>
       <find>null</find>
@@ -150,6 +150,8 @@
       <find>data-site-m-close</find>
       <find>Sub-Category 1</find>
       <find>open</find>
+      <find>data-site-m-root</find>
+      <find>primaryTemplate</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -186,9 +188,9 @@
         <option value="$PROJECT_DIR$/src/public/flyout-mobile-sample.html" />
         <option value="$PROJECT_DIR$/src/scripts/locale-dropdown.ts" />
         <option value="$PROJECT_DIR$/src/scripts/desktop-nav.ts" />
-        <option value="$PROJECT_DIR$/src/scripts/app.ts" />
         <option value="$PROJECT_DIR$/src/scripts/enums.ts" />
         <option value="$PROJECT_DIR$/src/public/index.html" />
+        <option value="$PROJECT_DIR$/src/scripts/app.ts" />
         <option value="$PROJECT_DIR$/src/scripts/mobile-nav.ts" />
       </list>
     </option>
@@ -345,12 +347,12 @@
       <workItem from="1530198301254" duration="827000" />
       <workItem from="1530204008762" duration="22544000" />
       <workItem from="1530327567635" duration="5281000" />
-      <workItem from="1530555767889" duration="10042000" />
+      <workItem from="1530555767889" duration="12868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67416000" />
+    <option name="totallyTimeSpent" value="70242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -366,7 +368,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32951653" />
       <window_info anchor="right" id="FAQ Robot" order="5" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17910448" />
       <window_info id="Project Explorer" order="4" />
       <window_info id="Job Explorer" order="4" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -696,16 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/desktop-nav.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2475">
@@ -729,8 +721,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="204" column="39" selection-start-line="204" selection-start-column="39" selection-end-line="204" selection-end-column="64" />
+        <state relative-caret-position="329">
+          <caret line="476" column="32" selection-start-line="476" selection-start-column="32" selection-end-line="476" selection-end-column="48" />
           <folding>
             <element signature="n#div#1;n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -738,10 +730,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-990">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="66">
+          <caret line="150" column="18" selection-start-line="150" selection-start-column="10" selection-end-line="150" selection-end-column="18" />
         </state>
       </provider>
     </entry>
