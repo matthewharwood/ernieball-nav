@@ -10,11 +10,13 @@ const LinkClasses = {
   SECONDARY: "secondary-list-item--flat",
   TERTIARY: "tertiary-list-item",
 };
-
+const selectByOutlet = (parent, selector) => parent.querySelectorAll(`[${selector}]`)
 const LinkSelectors = {
   PRIMARY: document.querySelectorAll(`.${LinkClasses.PRIMARY}`),
+  PRIMARY_OUTLETS: document.querySelectorAll(`[${DataAttrs.OUTLET}]`),
   SECONDARY: document.querySelectorAll(`.${LinkClasses.SECONDARY}`),
   TERTIARY: document.querySelectorAll(`.${LinkClasses.TERTIARY}`),
+
 };
 
 export class MobileNav {
@@ -48,17 +50,34 @@ export class MobileNav {
     // Set up primary
     Array.from(LinkSelectors.PRIMARY).forEach((link, i) => {
       RouteMap.get(RouteMapKeys.PRIMARY).set(i, link.textContent);
-    });
-    //
-    Array.from(LinkSelectors.SECONDARY).forEach((link, i) => {
-      RouteMap.get(RouteMapKeys.SECONDARY).set(i, link.textContent);
-    });
 
-    Array.from(LinkSelectors.TERTIARY).forEach((link, i) => {
-      RouteMap.get(RouteMapKeys.TERTIARY).set(i, link.textContent);
+      RouteMap.get(RouteMapKeys.SECONDARY)
+              .set(i, Array.from(selectByOutlet(LinkSelectors.PRIMARY_OUTLETS[i], DataAttrs.CATEGORY)));
+                  // .map((item:HTMLElement) => item.querySelector('a'))
+                  // .filter(Boolean));
     });
-
+    RouteMap.get(RouteMapKeys.SECONDARY).forEach((sItem, sIndex) => {
+      if(sItem.length) {
+        sItem.forEach(si => {
+          // console.log(si.attributes);
+          // console.log(si.attributes.getNamedItem(DataAttrs.CATEGORY))
+        })
+        // RouteMap.get(RouteMapKeys.TERTIARY)
+          // .set(i, Array.from(selectByOutlet(LinkSelectors.PRIMARY_OUTLETS[i], DataAttrs.CATEGORY)));
+      }
+    });
     console.log(RouteMap);
+
+    //
+    // Array.from(LinkSelectors.SECONDARY).forEach((link, i) => {
+    //   RouteMap.get(RouteMapKeys.SECONDARY).set(i, link.textContent);
+    // });
+    //
+    // Array.from(LinkSelectors.TERTIARY).forEach((link, i) => {
+    //   RouteMap.get(RouteMapKeys.TERTIARY).set(i, link.textContent);
+    // });
+
+    // console.log(RouteMap);
   }
 }
 

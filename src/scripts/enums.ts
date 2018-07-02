@@ -6,6 +6,7 @@ export const ClassNames = {
 };
 
 export const DataAttrs = {
+  CATEGORY: "data-site-category",
   DROPDOWN: "data-lang-dropdown",
   DROPDOWN_LIST: "data-lang-dropdown-list",
   LINK: "data-site-link",
@@ -13,7 +14,8 @@ export const DataAttrs = {
   MOBILE_TRIGGER_CLOSE: "data-site-m-close",
   MOBILE_TRIGGER_OPEN: "data-site-mobile-trigger",
   OUTLET: "data-site-outlet",
-  ROOT: "data-site-root"
+  ROOT: "data-site-root",
+  SUB_CATEGORY: "data-site-subcategory",
 };
 
 export const EventTypes = {
