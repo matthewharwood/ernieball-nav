@@ -13,6 +13,7 @@ export const DataAttrs = {
   MOBILE_ROOT: "data-site-m-root",
   MOBILE_TRIGGER_CLOSE: "data-site-m-close",
   MOBILE_TRIGGER_OPEN: "data-site-mobile-trigger",
+  MOBLE_OUTLETS: "data-site-m-outlet",
   OUTLET: "data-site-outlet",
   ROOT: "data-site-root",
   SUB_CATEGORY: "data-site-subcategory",

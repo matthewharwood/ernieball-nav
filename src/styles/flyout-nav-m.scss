@@ -29,17 +29,90 @@ $font-size: 12;
 
 .flyout__mobile-nav {
   background: $gray-2;
-  display: none;
+  display: flex;
   height: 100vh;
   position: fixed;
   right: 0;
   top: 0;
-  visibility: hidden;
-  width: 80%;
+  transform: translateX(percentage(3/3));
+  transition: none;
+  width: 240%;
   z-index: $mobile-menu-z;
 
   &.active {
-    display: flex;
-    visibility: visible;
+    transform: translateX(percentage(2/3));
+    transition: all cubic-bezier(0.4, 0.0, 0.2, 1) 198ms;
   }
+}
+
+.flyout__primary-nav {
+  background: $gray-2;
+  width: 80%;
+}
+
+.flyout__mobile-nav-list {
+  border-left: 1px solid $gray-2;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.flyout__mobile-nav-item-header {
+  align-items: center;
+  background: $white;
+  color: $black;
+  display: flex;
+  height: 105px;
+  justify-content: center;
+}
+
+.flyout__mobile-nav-item-label {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  font-weight: 700;
+  justify-content: center;
+  padding-left: 40px;
+  text-transform: uppercase;
+
+  &.left-align {
+    justify-content: flex-start;
+    padding-left: 36px;
+  }
+}
+
+.flyout__mobile-nav-item-select {
+  align-items: center;
+  background: $gray-2;
+  border-bottom: $gray-1 solid 1px;
+  color: $black;
+  display: flex;
+  font-weight: 700;
+  height: 52px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.flyout__mobile-nav-item-anchor {
+  color: $black;
+  display: flex;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    background-color: $gray-1;
+  }
+}
+
+.flyout__mobile-nav-item-icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
 }

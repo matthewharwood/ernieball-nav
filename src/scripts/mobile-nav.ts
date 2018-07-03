@@ -17,6 +17,7 @@ const selectByOutlet = (parent, selector) => parent.querySelectorAll(`[${selecto
 const LinkSelectors = {
   MOBILE_CLOSE: document.querySelectorAll(`[${DataAttrs.MOBILE_TRIGGER_CLOSE}]`),
   MOBILE_OPEN: document.querySelector(`[${DataAttrs.MOBILE_TRIGGER_OPEN}]`),
+  MOBILE_OUTLETS: document.querySelectorAll(`[${DataAttrs.MOBLE_OUTLETS}]`),
   MOBILE_ROOT: document.querySelector(`[${DataAttrs.MOBILE_ROOT}]`),
   PRIMARY: document.querySelectorAll(`.${LinkClasses.PRIMARY}`),
   PRIMARY_OUTLETS: document.querySelectorAll(`[${DataAttrs.OUTLET}]`),
@@ -48,7 +49,7 @@ const groupByAttrIdAndSanatize = (acc, val: HTMLElement) => {
 export class MobileNav {
   public static run() {
     const RouteMap = this.createMaps();
-    this.createListeners();
+
     const setAllRouteMap = (item, i) => {
       const cats = this.getCats(DataAttrs.CATEGORY, i)
         .map(queryAnchors)
@@ -63,14 +64,30 @@ export class MobileNav {
     };
 
     Array.from(LinkSelectors.PRIMARY, setAllRouteMap);
-    console.log(RouteMap);
     return RouteMap;
   }
 
   public static render(routes) {
-    console.log(this.primaryTemplate(routes), 1);
-    console.log(this.secondaryTemplate(routes), 2);
-    console.log(this.tertiaryTemplate(routes), 3);
+
+    Array.from(LinkSelectors.MOBILE_OUTLETS).forEach(item => {
+      const val = item.attributes.getNamedItem(DataAttrs.MOBLE_OUTLETS).value;
+      switch (val) {
+        case RouteMapKeys.PRIMARY:
+          item.innerHTML += this.primaryTemplate(routes);
+          this.createListeners();
+          return;
+        case RouteMapKeys.SECONDARY:
+          item.innerHTML += this.secondaryTemplate(routes);
+          return;
+        case RouteMapKeys.TERTIARY:
+          item.innerHTML += this.tertiaryTemplate(routes);
+          return;
+        default:
+
+          return;
+      }
+    });
+
   }
 
   private static close() {
@@ -85,6 +102,7 @@ export class MobileNav {
 
   private static createListeners() {
     LinkSelectors.MOBILE_OPEN.addEventListener(EventTypes.CLICK, this.open);
+    console.log(Array.from(LinkSelectors.MOBILE_CLOSE));
     Array.from(LinkSelectors.MOBILE_CLOSE).forEach(t => t.addEventListener(EventTypes.CLICK, this.close));
   }
 
@@ -105,16 +123,26 @@ export class MobileNav {
       routes.get(RouteMapKeys.PRIMARY).forEach(item => {
         if (item) {
           items += `
-            <li><a href="${item.href}">${item.label}</a></li>
+            <li class="flyout__mobile-nav-item-select">
+              <a class="flyout__mobile-nav-item-anchor" href="${item.href}">
+                <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
+                <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
+              </a>
+            </li>
           `;
         }
       });
       return items;
     };
+    (window as any).closeMobileNavigation = this.close;
 
 
     return `
-      <ul>
+      <ul class="flyout__mobile-nav-list">
+        <li class="flyout__mobile-nav-item-header">
+          <span class="flyout__mobile-nav-item-label">Menu</span>
+          <span class="flyout__mobile-nav-item-icon" onclick="closeMobileNavigation()"><img src="./img/close.svg" alt=""></span>
+        </li>
         ${listItems()}
       </ul>
     `;
