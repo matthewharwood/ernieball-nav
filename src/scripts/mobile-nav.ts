@@ -94,6 +94,8 @@ export class MobileNav {
   private static close() {
     LinkSelectors.MOBILE_ROOT.classList.remove(ClassNames.ACTIVE);
     Array.from(LinkSelectors.MOBILE_CLOSE).forEach(t => t.classList.remove(ClassNames.ACTIVE));
+    MobileNav.paginate("prev", 2);
+    MobileNav.paginate("prev", 1);
 
   }
 
@@ -166,7 +168,7 @@ export class MobileNav {
       <ul class="flyout__mobile-nav-list">
         <li class="flyout__mobile-nav-item-header">
           <span class="flyout__mobile-nav-item-label">Menu</span>
-          <span class="flyout__mobile-nav-item-icon" onclick="closeMobileNavigation()"><img src="./img/close.svg" alt=""></span>
+          <span class="flyout__mobile-nav-item-icon left-icon" onclick="closeMobileNavigation()"><img src="./img/close.svg" alt=""></span>
         </li>
         ${listItems()}
       </ul>
@@ -238,7 +240,7 @@ export class MobileNav {
     return `
       <ul class="flyout__mobile-nav-list">
         <li class="flyout__mobile-nav-item-header">
-          <span class="flyout__mobile-nav-item-icon" onclick="paginate('prev', 2)"><img src="./img/close.svg" alt=""></span>
+          <span class="flyout__mobile-nav-item-icon" onclick="paginate('prev', 2)"><img src="./img/chevron.svg" alt=""></span>
           <span class="flyout__mobile-nav-item-label">Menu</span>
         </li>
         ${listItems()}

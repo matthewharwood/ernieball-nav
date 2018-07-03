@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1f3cab-00ad-4f0c-91e7-75ccae8e160c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/mobile-nav.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/mobile-nav.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/flyout-nav-m.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/flyout-nav-m.scss" afterDir="false" />
     </list>
@@ -24,7 +23,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="13299">
               <caret line="479" column="61" selection-start-line="479" selection-start-column="61" selection-end-line="479" selection-end-column="61" />
               <folding>
                 <element signature="n#div#1;n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -58,8 +57,8 @@
       <file leaf-file-name="desktop-nav.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scripts/desktop-nav.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="764">
-              <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+            <state relative-caret-position="66">
+              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -67,8 +66,11 @@
       <file leaf-file-name="mobile-nav.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="223" column="79" selection-start-line="223" selection-start-column="79" selection-end-line="223" selection-end-column="79" />
+            <state relative-caret-position="267">
+              <caret line="242" column="106" selection-start-line="242" selection-start-column="106" selection-end-line="242" selection-end-column="106" />
+              <folding>
+                <element signature="n#!!block;n#createListeners#0;n#MobileNav#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,7 +78,7 @@
       <file leaf-file-name="enums.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scripts/enums.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
+            <state relative-caret-position="495">
               <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="15" />
             </state>
           </provider>
@@ -94,8 +96,8 @@
       <file leaf-file-name="flyout-nav-m.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/flyout-nav-m.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+            <state relative-caret-position="-282">
+              <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -122,10 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>data-site-outlet</find>
-      <find>remove</find>
-      <find>fly</find>
-      <find>data-site</find>
       <find>navigation__link</find>
       <find>site-navigation__item</find>
       <find>hamb</find>
@@ -139,8 +137,6 @@
       <find>listen</find>
       <find>list</find>
       <find>.flyout__mobile-nav-list</find>
-      <find>close</find>
-      <find>flyout__mobile-nav-item-icon</find>
       <find>label</find>
       <find>ba</find>
       <find>box</find>
@@ -152,6 +148,12 @@
       <find>z-inde</find>
       <find>primary</find>
       <find>flyout__mobile-nav</find>
+      <find>.flyout__mobile-nav-item-header</find>
+      <find>flyout__mobile-nav-item-icon</find>
+      <find>paginate</find>
+      <find>overflow</find>
+      <find>primary-nav</find>
+      <find>close</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -260,7 +262,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -302,6 +303,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,11 +358,12 @@
       <workItem from="1530327567635" duration="5281000" />
       <workItem from="1530555767889" duration="20133000" />
       <workItem from="1530591963836" duration="4244000" />
+      <workItem from="1530597398762" duration="992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81751000" />
+    <option name="totallyTimeSpent" value="82743000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -705,21 +708,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/enums.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
+        <state relative-caret-position="495">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/desktop-nav.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="13299">
           <caret line="479" column="61" selection-start-line="479" selection-start-column="61" selection-end-line="479" selection-end-column="61" />
           <folding>
             <element signature="n#div#1;n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -728,17 +724,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/desktop-nav.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/flyout-nav-m.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+        <state relative-caret-position="-282">
+          <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="223" column="79" selection-start-line="223" selection-start-column="79" selection-end-line="223" selection-end-column="79" />
+        <state relative-caret-position="267">
+          <caret line="242" column="106" selection-start-line="242" selection-start-column="106" selection-end-line="242" selection-end-column="106" />
+          <folding>
+            <element signature="n#!!block;n#createListeners#0;n#MobileNav#0" />
+          </folding>
         </state>
       </provider>
     </entry>
