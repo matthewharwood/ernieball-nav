@@ -29,6 +29,7 @@ $font-size: 12;
 
 .flyout__mobile-nav {
   background: $gray-2;
+  border-left: 1px solid $gray-1;
   display: flex;
   height: 100vh;
   position: fixed;
@@ -46,12 +47,11 @@ $font-size: 12;
 }
 
 .flyout__primary-nav {
-  background: $gray-2;
+  background: $white-off;
   width: 80%;
 }
 
 .flyout__mobile-nav-list {
-  border-left: 1px solid $gray-2;
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -63,6 +63,7 @@ $font-size: 12;
 .flyout__mobile-nav-item-header {
   align-items: center;
   background: $white;
+  border-bottom: $gray-1 solid 1px;
   color: $black;
   display: flex;
   height: 105px;
@@ -86,7 +87,7 @@ $font-size: 12;
 
 .flyout__mobile-nav-item-select {
   align-items: center;
-  background: $gray-2;
+  background: $white-off;
   border-bottom: $gray-1 solid 1px;
   color: $black;
   display: flex;
@@ -104,7 +105,7 @@ $font-size: 12;
   text-decoration: none;
   width: 100%;
   &:hover {
-    background-color: $gray-1;
+    background-color: $gray-2;
   }
 }
 

@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1f3cab-00ad-4f0c-91e7-75ccae8e160c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/enums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/enums.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/mobile-nav.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/mobile-nav.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/flyout-nav-m.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/flyout-nav-m.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -44,15 +42,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/app.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scripts/app.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mobile-nav.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mobile-nav.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="133" column="9" lean-forward="true" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
+            <state relative-caret-position="481">
+              <caret line="198" column="3" lean-forward="true" selection-start-line="194" selection-start-column="10" selection-end-line="198" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -101,11 +90,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flyout-nav-m.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="flyout-nav-m.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/flyout-nav-m.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+            <state relative-caret-position="165">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/colors.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -123,8 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>flyoutMenu</find>
-      <find>all</find>
       <find>data-s</find>
       <find>flyout</find>
       <find>data-site-lin</find>
@@ -149,10 +145,12 @@
       <find>listen</find>
       <find>list</find>
       <find>.flyout__mobile-nav-list</find>
-      <find>border</find>
       <find>close</find>
       <find>flyout__mobile-nav-item-icon</find>
       <find>label</find>
+      <find>ba</find>
+      <find>box</find>
+      <find>border</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -176,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/styles/placeholders.scss" />
         <option value="$PROJECT_DIR$/src/styles/_placeholders.scss" />
         <option value="$PROJECT_DIR$/src/styles/global.scss" />
-        <option value="$PROJECT_DIR$/src/styles/colors.scss" />
         <option value="$PROJECT_DIR$/src/styles/global-navigation.scss" />
         <option value="$PROJECT_DIR$/src/styles/functions.scss" />
         <option value="$PROJECT_DIR$/src/styles/flyout-nav.scss" />
@@ -192,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/public/index.html" />
         <option value="$PROJECT_DIR$/src/scripts/enums.ts" />
         <option value="$PROJECT_DIR$/src/scripts/mobile-nav.ts" />
+        <option value="$PROJECT_DIR$/src/styles/colors.scss" />
         <option value="$PROJECT_DIR$/src/styles/flyout-nav-m.scss" />
       </list>
     </option>
@@ -355,12 +353,12 @@
       <workItem from="1530198301254" duration="827000" />
       <workItem from="1530204008762" duration="22544000" />
       <workItem from="1530327567635" duration="5281000" />
-      <workItem from="1530555767889" duration="18564000" />
+      <workItem from="1530555767889" duration="20133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75938000" />
+    <option name="totallyTimeSpent" value="77507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -685,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/colors.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/public/flyout-mobile-sample.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1716">
@@ -730,13 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="133" column="9" lean-forward="true" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -748,10 +732,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/colors.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/flyout-nav-m.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+        <state relative-caret-position="165">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/mobile-nav.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="198" column="3" lean-forward="true" selection-start-line="194" selection-start-column="10" selection-end-line="198" selection-end-column="3" />
         </state>
       </provider>
     </entry>
