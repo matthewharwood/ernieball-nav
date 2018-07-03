@@ -32,6 +32,7 @@ $font-size: 12;
   border-left: 1px solid $gray-1;
   display: flex;
   height: 100vh;
+  overflow: hidden;
   position: fixed;
   right: 0;
   top: 0;
@@ -48,7 +49,22 @@ $font-size: 12;
 
 .flyout__primary-nav {
   background: $white-off;
+  height: 100%;
+  position: fixed;
+  transition: all cubic-bezier(0.4, 0.0, 0.2, 1) 198ms;
   width: 80%;
+
+  &.primary {
+    z-index: $mobile-menu-z * 2;
+  }
+  &.secondary {
+    transform: translateX(percentage(3/3));
+    z-index: $mobile-menu-z * 3;
+  }
+  &.tertiary {
+    transform: translateX(percentage(3/3));
+    z-index: $mobile-menu-z * 4;
+  }
 }
 
 .flyout__mobile-nav-list {
