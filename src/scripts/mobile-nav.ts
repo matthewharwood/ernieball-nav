@@ -38,6 +38,7 @@ const selections = {
   tertiary: 0
 };
 const parseTen = (val) => parseInt(val, BASE_TEN);
+const getAttributeVal = (val, attr) => val.attributes.getNamedItem(attr).value;
 const attrToInt = (val, attr) => parseTen(val.attributes.getNamedItem(attr).value);
 
 const groupByAttrIdAndSanatize = (acc, val: HTMLElement) => {
@@ -70,7 +71,18 @@ const getShowHideListItems = () => {
     });
   };
   linkVisibility(allSecondaryLinks, RouteMapKeys.PRIMARY);
-  linkVisibility(allTertiaryLinks, RouteMapKeys.SECONDARY);
+
+  Array.from(allTertiaryLinks).forEach((item) => {
+    const int = JSON.parse(getAttributeVal(item, DataAttrs.MOBILE_LINK));
+
+    if (int[0] !== selections[RouteMapKeys.PRIMARY] && int[1] !== selections[RouteMapKeys.SECONDARY]) {
+      console.log(int, "hide", selections[RouteMapKeys.PRIMARY], selections[RouteMapKeys.SECONDARY]);
+      hideParent(item);
+    } else {
+      console.log(int, "show", selections[RouteMapKeys.PRIMARY], selections[RouteMapKeys.SECONDARY]);
+      showParent(item);
+    }
+  });
   // console.log(allSecondaryLinks, "all Mobile links");
   // console.log(allTertiaryLinks, "all Mobile links");
 
@@ -137,22 +149,54 @@ export class MobileNav {
     Array.from(LinkSelectors.MOBILE_CLOSE).forEach(t => t.addEventListener(EventTypes.CLICK, this.close));
   }
 
+  private static getShowHideListItems() {
+    const hideParent = (item) => item.parentElement.style.display = "none";
+    const showParent = (item) => item.parentElement.style.display = "flex";
+    const resetAll = (items) => items.forEach(item => item.parentElement.style.display = "flex");
+    const allSecondaryLinks = document.querySelectorAll(`[${DataAttrs.MOBILE_LINK_SECONDARY}]`);
+    const allTertiaryLinks = document.querySelectorAll(`[${DataAttrs.MOBILE_LINK_TERTIARY}]`);
+    const linkVisibility = (links, selector) => {
+      Array.from(links).forEach((item) => {
+        const int = attrToInt(item, DataAttrs.MOBILE_LINK);
+        if (int !== selections[selector]) {
+          hideParent(item);
+        } else {
+          showParent(item);
+        }
+      });
+    };
+    linkVisibility(allSecondaryLinks, RouteMapKeys.PRIMARY);
+
+    Array.from(allTertiaryLinks).forEach((item) => {
+      const int = JSON.parse(getAttributeVal(item, DataAttrs.MOBILE_LINK));
+
+      if (int[0] === selections[RouteMapKeys.PRIMARY] && int[1] === selections[RouteMapKeys.SECONDARY]) {
+
+        console.log(int, "show", selections[RouteMapKeys.PRIMARY], selections[RouteMapKeys.SECONDARY]);
+        showParent(item);
+      } else {
+        console.log(int, "hide", selections[RouteMapKeys.PRIMARY], selections[RouteMapKeys.SECONDARY]);
+        hideParent(item);
+      }
+    });
+  }
+
   private static paginate(direction = "", pane, event = null) {
     const isFirst = pane === 0;
     const isSecond = pane === 1;
     const isThird = pane === 2;
     if (event) {
-      const attr = attrToInt(event, DataAttrs.MOBILE_LINK);
-      if (isFirst) {
-        selections.primary = attr;
-      } else if (isSecond) {
-        selections.secondary = attr;
-      } else if (isThird) {
-        selections.tertiary = attr;
-      }
-      getShowHideListItems();
-    }
 
+      if (isFirst) {
+
+        selections.primary = attrToInt(event, DataAttrs.MOBILE_LINK);
+      } else if (isSecond) {
+        selections.secondary = attrToInt(event, DataAttrs.MOBILE_LINK);
+      } else if (isThird) {
+        selections.tertiary = attrToInt(event, DataAttrs.MOBILE_LINK);
+      }
+      console.log(selections);
+    }
 
     if (direction === "next") {
       if (isFirst) {
@@ -173,7 +217,8 @@ export class MobileNav {
 
     }
     MobileNav.run();
-    console.log(selections, "clicked index");
+    console.log(selections);
+    MobileNav.getShowHideListItems();
   }
 
   private static createMaps() {
@@ -229,7 +274,6 @@ export class MobileNav {
 
     const listItems = () => {
       let template = "";
-      console.log(routes.get(RouteMapKeys.SECONDARY));
       routes.get(RouteMapKeys.SECONDARY).forEach((items, index) => {
         if (items) {
           items.forEach((item) => {
@@ -272,16 +316,17 @@ export class MobileNav {
     const listItems = () => {
       let template = "";
 
-      routes.get(RouteMapKeys.TERTIARY).forEach(mapItems => {
+      console.log(routes.get(RouteMapKeys.TERTIARY));
+      routes.get(RouteMapKeys.TERTIARY).forEach((mapItems, pIndex) => {
         if (mapItems) {
-
           Object.keys(mapItems)
-            .forEach(key => mapItems[key].forEach((item, index) => {
+            .forEach(key => mapItems[key].forEach((item, sIndex) => {
+
               template += `
                 <li class="flyout__mobile-nav-item-select">
                   <a class="flyout__mobile-nav-item-anchor"
                       data-site-m-tertiary
-                      data-site-m-link="${index}" 
+                      data-site-m-link="[${pIndex}, ${key}]" 
                       href="${item.href}">
                     <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
                     <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
@@ -290,6 +335,7 @@ export class MobileNav {
             `;
             }));
         }
+
       });
 
       return template;
