@@ -37,8 +37,11 @@ const selections = {
   secondary: 0,
   tertiary: 0
 };
+const parseTen = (val) => parseInt(val, BASE_TEN);
+const attrToInt = (val, attr) => parseTen(val.attributes.getNamedItem(attr).value);
+
 const groupByAttrIdAndSanatize = (acc, val: HTMLElement) => {
-  const subAttrVal = parseInt(val.attributes.getNamedItem(DataAttrs.SUB_CATEGORY).value, BASE_TEN);
+  const subAttrVal = attrToInt(val, DataAttrs.SUB_CATEGORY);
   if (val && !isNaN(subAttrVal)) {
     if (acc[subAttrVal]) {
       acc[subAttrVal].push(anchorize(queryAnchors(val)));
@@ -75,6 +78,7 @@ export class MobileNav {
   public static render(routes) {
     Array.from(LinkSelectors.MOBILE_OUTLETS).forEach(item => {
       const val = item.attributes.getNamedItem(DataAttrs.MOBLE_OUTLETS).value;
+
       switch (val) {
         case RouteMapKeys.PRIMARY:
           item.innerHTML += this.primaryTemplate(routes);
@@ -115,12 +119,13 @@ export class MobileNav {
     const isSecond = pane === 1;
     const isThird = pane === 2;
     if (event) {
+      const attr = attrToInt(event, DataAttrs.MOBILE_LINK);
       if (isFirst) {
-        selections.primary = event.attributes.getNamedItem(DataAttrs.MOBILE_LINK).value;
+        selections.primary = attr;
       } else if (isSecond) {
-        selections.secondary = event.attributes.getNamedItem(DataAttrs.MOBILE_LINK).value;
+        selections.secondary = attr;
       } else if (isThird) {
-        selections.tertiary = event.attributes.getNamedItem(DataAttrs.MOBILE_LINK).value;
+        selections.tertiary = attr;
       }
     }
 
@@ -199,10 +204,9 @@ export class MobileNav {
     const listItems = () => {
       let template = "";
 
-      routes.get(RouteMapKeys.SECONDARY).forEach((items, index) => {
+      routes.get(RouteMapKeys.SECONDARY).forEach((items) => {
         if (items) {
-
-          for (const item of items) {
+          items.forEach((item, index) => {
             if (item) {
               template += `
              <li class="flyout__mobile-nav-item-select">
@@ -216,7 +220,7 @@ export class MobileNav {
             </li>
           `;
             }
-          }
+          });
         }
       });
 
@@ -247,7 +251,7 @@ export class MobileNav {
           Object.keys(mapItems)
             .forEach(key => mapItems[key].forEach(item => {
               template += `
-                  <li class="flyout__mobile-nav-item-select">
+                <li class="flyout__mobile-nav-item-select">
                   <a class="flyout__mobile-nav-item-anchor" href="${item.href}">
                     <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
                     <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
@@ -265,7 +269,9 @@ export class MobileNav {
     return `
       <ul class="flyout__mobile-nav-list">
         <li class="flyout__mobile-nav-item-header">
-          <span class="flyout__mobile-nav-item-icon" onclick="paginate('prev', 2)"><img src="./img/chevron.svg" alt=""></span>
+          <span class="flyout__mobile-nav-item-icon"
+                onclick="paginate('prev', 2)">
+              <img src="./img/chevron.svg" alt=""></span>
           <span class="flyout__mobile-nav-item-label">Menu</span>
         </li>
         ${listItems()}
