@@ -11,6 +11,8 @@ export const DataAttrs = {
   DROPDOWN_LIST: "data-lang-dropdown-list",
   LINK: "data-site-link",
   MOBILE_LINK: 'data-site-m-link',
+  MOBILE_LINK_SECONDARY: 'data-site-m-secondary',
+  MOBILE_LINK_TERTIARY: 'data-site-m-tertiary',
   MOBILE_ROOT: "data-site-m-root",
   MOBILE_TRIGGER_CLOSE: "data-site-m-close",
   MOBILE_TRIGGER_OPEN: "data-site-mobile-trigger",

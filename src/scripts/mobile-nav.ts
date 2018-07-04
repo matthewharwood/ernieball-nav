@@ -53,6 +53,31 @@ const groupByAttrIdAndSanatize = (acc, val: HTMLElement) => {
   return acc;
 };
 
+const getShowHideListItems = () => {
+  const hideParent = (item) => item.parentElement.style.display = "none";
+  const showParent = (item) => item.parentElement.style.display = "flex";
+  const resetAll = (items) => items.forEach(item => item.parentElement.style.display = "flex");
+  const allSecondaryLinks = document.querySelectorAll(`[${DataAttrs.MOBILE_LINK_SECONDARY}]`);
+  const allTertiaryLinks = document.querySelectorAll(`[${DataAttrs.MOBILE_LINK_TERTIARY}]`);
+  const linkVisibility = (links, selector) => {
+    Array.from(links).forEach((item) => {
+      const int = attrToInt(item, DataAttrs.MOBILE_LINK);
+      if (int !== selections[selector]) {
+        hideParent(item);
+      } else {
+        showParent(item);
+      }
+    });
+  };
+  linkVisibility(allSecondaryLinks, RouteMapKeys.PRIMARY);
+  linkVisibility(allTertiaryLinks, RouteMapKeys.SECONDARY);
+  // console.log(allSecondaryLinks, "all Mobile links");
+  // console.log(allTertiaryLinks, "all Mobile links");
+
+
+  // const allMobileLinksParents =
+};
+
 export class MobileNav {
   public static run() {
     (window as any).currentMenuPage = 1;
@@ -90,11 +115,9 @@ export class MobileNav {
           item.innerHTML += this.tertiaryTemplate(routes);
           return;
         default:
-
           return;
       }
     });
-
   }
 
   private static close() {
@@ -127,7 +150,9 @@ export class MobileNav {
       } else if (isThird) {
         selections.tertiary = attr;
       }
+      getShowHideListItems();
     }
+
 
     if (direction === "next") {
       if (isFirst) {
@@ -168,6 +193,7 @@ export class MobileNav {
 
     const listItems = () => {
       let items = "";
+
       routes.get(RouteMapKeys.PRIMARY).forEach((item, index) => {
         if (item) {
           items += `
@@ -203,15 +229,16 @@ export class MobileNav {
 
     const listItems = () => {
       let template = "";
-
-      routes.get(RouteMapKeys.SECONDARY).forEach((items) => {
+      console.log(routes.get(RouteMapKeys.SECONDARY));
+      routes.get(RouteMapKeys.SECONDARY).forEach((items, index) => {
         if (items) {
-          items.forEach((item, index) => {
+          items.forEach((item) => {
             if (item) {
               template += `
              <li class="flyout__mobile-nav-item-select">
               <a class="flyout__mobile-nav-item-anchor"
                 href="${item.href}"
+                data-site-m-secondary
                 data-site-m-link="${index}" 
                 onclick="paginate('next', 1, this)">
                 <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
@@ -249,10 +276,13 @@ export class MobileNav {
         if (mapItems) {
 
           Object.keys(mapItems)
-            .forEach(key => mapItems[key].forEach(item => {
+            .forEach(key => mapItems[key].forEach((item, index) => {
               template += `
                 <li class="flyout__mobile-nav-item-select">
-                  <a class="flyout__mobile-nav-item-anchor" href="${item.href}">
+                  <a class="flyout__mobile-nav-item-anchor"
+                      data-site-m-tertiary
+                      data-site-m-link="${index}" 
+                      href="${item.href}">
                     <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
                     <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
                   </a>
