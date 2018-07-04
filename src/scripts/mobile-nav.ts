@@ -32,7 +32,11 @@ const anchorize = (item) => {
   };
 };
 const queryAnchors = (item: HTMLElement) => item.querySelector(ANCHOR);
-
+const selections = {
+  primary: 0,
+  secondary: 0,
+  tertiary: 0
+};
 const groupByAttrIdAndSanatize = (acc, val: HTMLElement) => {
   const subAttrVal = parseInt(val.attributes.getNamedItem(DataAttrs.SUB_CATEGORY).value, BASE_TEN);
   if (val && !isNaN(subAttrVal)) {
@@ -63,19 +67,17 @@ export class MobileNav {
       RouteMap.get(RouteMapKeys.SECONDARY).set(i, cats);
       RouteMap.get(RouteMapKeys.TERTIARY).set(i, subCats);
     };
-
+    this.createListeners();
     Array.from(LinkSelectors.PRIMARY, setAllRouteMap);
     return RouteMap;
   }
 
   public static render(routes) {
-
     Array.from(LinkSelectors.MOBILE_OUTLETS).forEach(item => {
       const val = item.attributes.getNamedItem(DataAttrs.MOBLE_OUTLETS).value;
       switch (val) {
         case RouteMapKeys.PRIMARY:
           item.innerHTML += this.primaryTemplate(routes);
-          this.createListeners();
           return;
         case RouteMapKeys.SECONDARY:
           item.innerHTML += this.secondaryTemplate(routes);
@@ -96,13 +98,11 @@ export class MobileNav {
     Array.from(LinkSelectors.MOBILE_CLOSE).forEach(t => t.classList.remove(ClassNames.ACTIVE));
     MobileNav.paginate("prev", 2);
     MobileNav.paginate("prev", 1);
-
   }
 
   private static open() {
     LinkSelectors.MOBILE_ROOT.classList.add(ClassNames.ACTIVE);
     Array.from(LinkSelectors.MOBILE_CLOSE).forEach(t => t.classList.add(ClassNames.ACTIVE));
-
   }
 
   private static createListeners() {
@@ -110,25 +110,40 @@ export class MobileNav {
     Array.from(LinkSelectors.MOBILE_CLOSE).forEach(t => t.addEventListener(EventTypes.CLICK, this.close));
   }
 
-  private static paginate(direction = "", pane) {
+  private static paginate(direction = "", pane, event = null) {
+    const isFirst = pane === 0;
+    const isSecond = pane === 1;
+    const isThird = pane === 2;
+    if (event) {
+      if (isFirst) {
+        selections.primary = event.attributes.getNamedItem(DataAttrs.MOBILE_LINK).value;
+      } else if (isSecond) {
+        selections.secondary = event.attributes.getNamedItem(DataAttrs.MOBILE_LINK).value;
+      } else if (isThird) {
+        selections.tertiary = event.attributes.getNamedItem(DataAttrs.MOBILE_LINK).value;
+      }
+    }
+
     if (direction === "next") {
-      if (pane === 0) {
+      if (isFirst) {
         (LinkSelectors.MOBILE_OUTLETS as any)[1].style.transform = `translateX(0)`;
       }
-      if (pane === 1) {
+      if (isSecond) {
         (LinkSelectors.MOBILE_OUTLETS as any)[2].style.transform = `translateX(0)`;
       }
 
     } else if (direction === "prev") {
-      if (pane === 1) {
+      if (isSecond) {
         (LinkSelectors.MOBILE_OUTLETS as any)[1].style.transform = `translateX(100%)`;
       }
-      if (pane === 2) {
+      if (isThird) {
         (LinkSelectors.MOBILE_OUTLETS as any)[2].style.transform = `translateX(100%)`;
       }
     } else {
 
     }
+    MobileNav.run();
+    console.log(selections, "clicked index");
   }
 
   private static createMaps() {
@@ -148,11 +163,13 @@ export class MobileNav {
 
     const listItems = () => {
       let items = "";
-      routes.get(RouteMapKeys.PRIMARY).forEach(item => {
+      routes.get(RouteMapKeys.PRIMARY).forEach((item, index) => {
         if (item) {
           items += `
-            <li class="flyout__mobile-nav-item-select">
-              <a class="flyout__mobile-nav-item-anchor" href="${item.href}" onclick="paginate('next', 0)">
+            <li class="flyout__mobile-nav-item-select" >
+              <a class="flyout__mobile-nav-item-anchor"
+                  data-site-m-link="${index}" 
+                  href="${item.href}" onclick="paginate('next', 0, this)">
                 <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
                 <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
               </a>
@@ -178,21 +195,26 @@ export class MobileNav {
   private static secondaryTemplate(routes) {
     (window as any).closeMobileNavigation = this.close;
     (window as any).paginate = this.paginate;
+
     const listItems = () => {
       let template = "";
-      routes.get(RouteMapKeys.SECONDARY).forEach(items => {
+
+      routes.get(RouteMapKeys.SECONDARY).forEach((items, index) => {
         if (items) {
+
           for (const item of items) {
             if (item) {
               template += `
-                
-                 <li class="flyout__mobile-nav-item-select">
-                  <a class="flyout__mobile-nav-item-anchor" href="${item.href}" onclick="paginate('next', 1)">
-                    <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
-                    <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
-                  </a>
-                </li>
-              `;
+             <li class="flyout__mobile-nav-item-select">
+              <a class="flyout__mobile-nav-item-anchor"
+                href="${item.href}"
+                data-site-m-link="${index}" 
+                onclick="paginate('next', 1, this)">
+                <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
+                <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
+              </a>
+            </li>
+          `;
             }
           }
         }
@@ -215,13 +237,16 @@ export class MobileNav {
 
   private static tertiaryTemplate(routes) {
     (window as any).closeMobileNavigation = this.close;
-    (window as any).paginate = this.paginate;
+
     const listItems = () => {
       let template = "";
+
       routes.get(RouteMapKeys.TERTIARY).forEach(mapItems => {
         if (mapItems) {
-          Object.keys(mapItems).forEach(key => mapItems[key].forEach(item => {
-            template += `
+
+          Object.keys(mapItems)
+            .forEach(key => mapItems[key].forEach(item => {
+              template += `
                   <li class="flyout__mobile-nav-item-select">
                   <a class="flyout__mobile-nav-item-anchor" href="${item.href}">
                     <span class="flyout__mobile-nav-item-label left-align">${item.label}</span>
@@ -229,7 +254,7 @@ export class MobileNav {
                   </a>
                 </li>
             `;
-          }));
+            }));
         }
       });
 
