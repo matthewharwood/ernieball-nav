@@ -32,6 +32,12 @@
         </a>
       </div>
     </div>
+
+    <!--  NOTES:
+      This links to the global navigation overlay.
+      ATTR: data-lang-dropdown
+      ** please start at 0 and count up as you add more items.
+    -->
     <div data-lang-dropdown class="global-navigation__right">
       <button class="lang-select">
       <span class="lang-select__flag">
@@ -49,6 +55,11 @@
   <!-- END: Global Navigation Bar -->
 
   <!-- START: Site Navigation Bar -->
+  <!--  NOTES:
+    This links to the site navigation overlay via the <number>
+    ATTR: data-site-link="<number>"
+    ** please start at 0 and count up as you add more items.
+  -->
   <nav id="site-navigation" class="site-navigation">
     <div class="site-navigation__left">
       <a href="#" class="site-navigation__home">
@@ -62,18 +73,6 @@
         </li>
         <li data-site-link="1" class="site-navigation__item">
           <a class="site-navigation__link" href="#">Accessories</a>
-        </li>
-        <li data-site-link="2" class="site-navigation__item">
-          <a class="site-navigation__link" href="#">Merch</a>
-        </li>
-        <li data-site-link="3" class="site-navigation__item">
-          <a class="site-navigation__link" href="#">Artists</a>
-        </li>
-        <li data-site-link="4" class="site-navigation__item">
-          <a class="site-navigation__link" href="#">About</a>
-        </li>
-        <li data-site-link="5" class="site-navigation__item">
-          <a class="site-navigation__link" href="#">Culture</a>
         </li>
       </ul>
     </div>
@@ -93,6 +92,10 @@
           </button>
         </li>
         <li class="site-navigation__item-alt show-mobile">
+          <!--  NOTES:
+            Trigger to open and close mobile navigation.
+            ATTR: data-site-mobile-trigger
+          -->
           <button class="site-navigation__button" data-site-mobile-trigger>
             <img src="./img/hamburger.svg" alt="">
           </button>
@@ -102,6 +105,10 @@
   </nav>
 
   <!-- START: Global Navigation Bar Locale Flyout -->
+  <!--  NOTES:
+    this links to the global navigation through
+    ATTR: data-lang-dropdown-list
+  -->
   <div class="flyout__locale">
     <div data-lang-dropdown-list class="lang-select__dropdown">
       <ul class="lang-select__options">
@@ -161,6 +168,27 @@
   <!-- END: Global Navigation Bar Locale Flyout -->
 
   <!-- START: Site Navigation Bar Desktop Flyout -->
+
+  <!--  NOTES:
+    ATTR: data-site-link="*"
+    Used to debounce the overlay to stay open temporary when use floats in and out of navigation.
+
+    ATTR: data-site-root
+    Used to set the root context of navigation overlay.
+
+    ATTR: data-site-outlet="<number>"
+    Used to set the items in overlay context of site navigation.
+    ** please start at 0 and count up as you add more items.
+
+    ATTR: data-site-category="<number>"
+    Used to set an item's secondary category of the overlay context of the site navigation.
+    ** please start at 0 and count up as you add more items.
+    ** NOTE THAT CATEGORYS ARE FLAT AND ENUMERATION COUNTS UP BETWEEN COLUMNS!!!
+
+    ATTR: data-site-subcategory="<number>"
+    Used to set an item's category sub-category of the overlay context of the site navigation.
+     ** please MATCH the CATEGORY<number> you want to associate the sub category with!!!!
+  -->
   <nav class="flyout__desktop-nav" data-site-link="*" data-site-root>
     <div class="flyout__container" data-site-outlet="0">
       <div class="flyout__column flyout__column-stamp">
@@ -268,205 +296,16 @@
         </ul>
       </div>
     </div>
-    <div class="flyout__container" data-site-outlet="2">
-      <div class="flyout__column flyout__column-stamp">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">New Releases</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">Best Sellers</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">10% off guitar picks</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">Tremolo Pedal Make waves!</a>
-          </li>
-          <li>
-            <a href="#" class="secondary-list-item--flat promo-item">
-              <img src="./img/pedal.png" alt="">
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="flyout__column">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">Category 1</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item">Category 2</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="flyout__container" data-site-outlet="3">
-      <div class="flyout__column flyout__column-stamp">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">New Releases</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
-          </li>
-          <li>
-            <a href="#" class="secondary-list-item--flat promo-item">
-              <img src="./img/pedal.png" alt="">
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="flyout__column">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">Category 1</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item">Category 2</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="flyout__container" data-site-outlet="4">
-      <div class="flyout__column flyout__column-stamp">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">New Releases</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
-          </li>
-          <li>
-            <a href="#" class="secondary-list-item--flat promo-item">
-              <img src="./img/pedal.png" alt="">
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="flyout__column">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">Category 1</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item">Category 2</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="flyout__column">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">Category 1</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-
-
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item">Category 2</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-          </li>
-        </ul>
-      </div>
-      <div class="flyout__column">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat">Category 1</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-
-
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item">Category 2</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item">Sub-category 1</a>
-          </li>
-
-          <li class="flyout__group-item">
-            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="flyout__container" data-site-outlet="5">
-      <div class="flyout__column flyout__column-stamp">
-        <ul class="flyout__group">
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">New Releases</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
-          </li>
-          <li class="flyout__group-item">
-            <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
-          </li>
-          <li>
-            <a href="#" class="secondary-list-item--flat promo-item">
-              <img src="./img/pedal.png" alt="">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
   </nav>
   <!-- END: Site Navigation Bar Desktop Flyout -->
 
   <!-- START: Site Navigation Bar Mobile Flyout -->
+  <!--  NOTES:
+   this links to the global mobile navigation through
+   ATTR: data-site-m-root && data-site-m-outlet="<name>"
+
+   ** Note: just copy and past this and it will just work.
+ -->
   <div class="flyout__mobile-overlay" data-site-m-close></div>
   <div class="flyout__mobile-nav" data-site-m-root>
     <div class="flyout__primary-nav primary" data-site-m-outlet="primary"></div>
