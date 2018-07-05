@@ -86,7 +86,7 @@
 .global-navigation__item-link {
   @extend %full-container;
   @extend %flex-center;
-  opacity: .5;
+  opacity: 0.5;
 
   &:hover {
     opacity: 1;
@@ -141,7 +141,6 @@
 
   @include bp(sm) {
     padding-right: 6px;
-
   }
 }
 
@@ -149,7 +148,6 @@
   @extend %full-height;
   @extend %center-align;
   @include font-medium();
-
 
   display: inline;
   position: relative;
@@ -190,13 +188,11 @@
 
   @include bp(sm) {
     box-shadow: -1px 3px 4px rgba(0, 0, 0, 0.12);
-
   }
 }
 
 .lang-select__dropdown--active {
   @extend %show;
-
 }
 
 .lang-select__options {
@@ -217,7 +213,6 @@
 
   @include bp(sm) {
     padding: 6px 34px;
-
   }
 
   &:hover {

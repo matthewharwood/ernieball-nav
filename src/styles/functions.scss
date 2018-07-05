@@ -38,13 +38,13 @@ $font: 'Montserrat', sans-serif;
   visibility: hidden !important;
 }
 
-@mixin show($display:flex) {
+@mixin show($display: flex) {
   display: $display !important;
   visibility: visible !important;
 }
 
 @mixin font() {
-  font-family: $font
+  font-family: $font;
 }
 
 @mixin font-medium() {

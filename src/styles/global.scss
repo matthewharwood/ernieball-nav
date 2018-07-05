@@ -1,6 +1,7 @@
 @import 'functions';
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   position: relative;
@@ -12,7 +13,9 @@ html {
   height: 200%;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 

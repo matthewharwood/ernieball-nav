@@ -9,7 +9,7 @@ $font-size: 12;
 // TODO add scroll and test !!!
 
 .flyout__mobile-overlay {
-  background: transparentize($white, .1);
+  background: transparentize($white, 0.1);
   bottom: 0;
   display: none;
   height: 100vh;
@@ -41,7 +41,7 @@ $font-size: 12;
 
   &.active {
     transform: translateX(percentage(2/3));
-    transition: all cubic-bezier(0.4, 0.0, 0.2, 1) 198ms;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 198ms;
   }
 }
 
@@ -51,7 +51,7 @@ $font-size: 12;
   height: 100%;
   overflow: auto;
   position: fixed;
-  transition: all cubic-bezier(0.4, 0.0, 0.2, 1) 198ms;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 198ms;
   width: 80%;
 
   &.primary {
