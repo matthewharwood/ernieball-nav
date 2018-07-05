@@ -6,12 +6,13 @@
   <title>
     Ernieball Navigation
   </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- I'm using montserrat because it's nearly identical to gotham and free.  -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 </head>
 
 <body>
-<div class="grid-container">
+<div class="fixed-container">
   <!-- START: Global Navigation Bar -->
   <nav id="global-navigation" class="global-navigation">
     <div class="global-navigation__left">
@@ -99,387 +100,382 @@
       </ul>
     </div>
   </nav>
-  <!-- END: Site Navigation Bar -->
-</div>
-<!--
 
-  After this point we have only overlay templates.
-  Overlays have need to attach themselves to a relative point but must be outside of any parent for sizing purposes.
-
--->
-<!-- START: Global Navigation Bar Locale Flyout -->
-<div class="flyout__locale">
-  <div data-lang-dropdown-list class="lang-select__dropdown">
-    <ul class="lang-select__options">
-      <li>
-        <a class="lang-select lang-select--anchor" href="#">
+  <!-- START: Global Navigation Bar Locale Flyout -->
+  <div class="flyout__locale">
+    <div data-lang-dropdown-list class="lang-select__dropdown">
+      <ul class="lang-select__options">
+        <li>
+          <a class="lang-select lang-select--anchor" href="#">
           <span class="lang-select__flag">
             <img src="./img/usa-flag.png" alt="usa flag">
           </span>
-          <span class="lang-select__country">
+            <span class="lang-select__country">
             Different country
           </span>
-        </a>
-      </li>
-      <li>
-        <a class="lang-select lang-select--anchor" href="#">
+          </a>
+        </li>
+        <li>
+          <a class="lang-select lang-select--anchor" href="#">
           <span class="lang-select__flag">
               <img src="./img/usa-flag.png" alt="usa flag">
           </span>
-          <span class="lang-select__country">
+            <span class="lang-select__country">
               Different country
           </span>
-        </a>
-      </li>
-      <li>
-        <a class="lang-select lang-select--anchor" href="#">
+          </a>
+        </li>
+        <li>
+          <a class="lang-select lang-select--anchor" href="#">
             <span class="lang-select__flag">
               <img src="./img/usa-flag.png" alt="usa flag">
             </span>
-          <span class="lang-select__country">
+            <span class="lang-select__country">
               Different country
             </span>
-        </a>
-      </li>
-      <li>
-        <a class="lang-select lang-select--anchor" href="#">
+          </a>
+        </li>
+        <li>
+          <a class="lang-select lang-select--anchor" href="#">
             <span class="lang-select__flag">
               <img src="./img/usa-flag.png" alt="usa flag">
             </span>
-          <span class="lang-select__country">
+            <span class="lang-select__country">
               Different country
             </span>
-        </a>
-      </li>
-      <li>
-        <a class="lang-select lang-select--anchor" href="#">
+          </a>
+        </li>
+        <li>
+          <a class="lang-select lang-select--anchor" href="#">
           <span class="lang-select__flag">
             <img src="./img/usa-flag.png" alt="usa flag">
           </span>
-          <span class="lang-select__country">
+            <span class="lang-select__country">
               Different country Name long
           </span>
-        </a>
-      </li>
-    </ul>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
+  <!-- END: Global Navigation Bar Locale Flyout -->
+
+  <!-- START: Site Navigation Bar Desktop Flyout -->
+  <nav class="flyout__desktop-nav" data-site-link="*" data-site-root>
+    <div class="flyout__container" data-site-outlet="0">
+      <div class="flyout__column flyout__column-stamp">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">New Releases</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Best Sellers</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">10% off guitar picks</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Tremolo Pedal Make waves!</a>
+          </li>
+          <li>
+            <a href="#" class="secondary-list-item--flat promo-item">
+              <img src="./img/pedal.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flyout__column">
+        <ul class="flyout__group">
+          <li class="flyout__group-item" data-site-category="0">
+            <a href="https://www.google.com" class="secondary-list-item--flat">Major Strings Cateogry</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="0">
+            <a href="#" class="tertiary-list-item">Major Strings Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item" data-site-category="1">
+            <a href="#" class="secondary-list-item">Minor Strings Category</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="1">
+            <a href="#" class="tertiary-list-item">Minor Strings Sub-category 1</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="1">
+            <a href="#" class="tertiary-list-item tertiary-list-item--all">Minor Strings See all</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flyout__column">
+        <ul class="flyout__group">
+          <li class="flyout__group-item" data-site-category="2">
+            <a href="#" class="secondary-list-item--flat">Major Strings 2 Cateogry</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="2">
+            <a href="#" class="tertiary-list-item">Major Strings 2 Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item" data-site-category="3">
+            <a href="#" class="secondary-list-item">Minor Strings 3 Category</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="3">
+            <a href="#" class="tertiary-list-item">Minor Strings 3 Sub-category 1</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="3">
+            <a href="#" class="tertiary-list-item tertiary-list-item--all">Minor Strings 3 See all</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flyout__container" data-site-outlet="1">
+      <div class="flyout__column flyout__column-stamp">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">New Releases</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Best Sellers</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">10% off guitar picks</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Tremolo Pedal Make waves!</a>
+          </li>
+          <li>
+            <a href="#" class="secondary-list-item--flat promo-item">
+              <img src="./img/pedal.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flyout__column">
+        <ul class="flyout__group">
+          <li class="flyout__group-item" data-site-category="0">
+            <a href="#" class="secondary-list-item--flat">Major Accessories</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="0">
+            <a href="#" class="tertiary-list-item">Major Accessories Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item" data-site-category="1">
+            <a href="#" class="secondary-list-item">Minor Accessories</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="1">
+            <a href="#" class="tertiary-list-item">Minor Accessories Sub-category 1</a>
+          </li>
+          <li class="flyout__group-item" data-site-subcategory="1">
+            <a href="#" class="tertiary-list-item tertiary-list-item--all">Minor Accessories See all</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flyout__container" data-site-outlet="2">
+      <div class="flyout__column flyout__column-stamp">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">New Releases</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Best Sellers</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">10% off guitar picks</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Tremolo Pedal Make waves!</a>
+          </li>
+          <li>
+            <a href="#" class="secondary-list-item--flat promo-item">
+              <img src="./img/pedal.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flyout__column">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Category 1</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item">Category 2</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flyout__container" data-site-outlet="3">
+      <div class="flyout__column flyout__column-stamp">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">New Releases</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
+          </li>
+          <li>
+            <a href="#" class="secondary-list-item--flat promo-item">
+              <img src="./img/pedal.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flyout__column">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Category 1</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item">Category 2</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flyout__container" data-site-outlet="4">
+      <div class="flyout__column flyout__column-stamp">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">New Releases</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
+          </li>
+          <li>
+            <a href="#" class="secondary-list-item--flat promo-item">
+              <img src="./img/pedal.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flyout__column">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Category 1</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item">Category 2</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flyout__column">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Category 1</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+
+
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item">Category 2</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flyout__column">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat">Category 1</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+
+
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item">Category 2</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item">Sub-category 1</a>
+          </li>
+
+          <li class="flyout__group-item">
+            <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flyout__container" data-site-outlet="5">
+      <div class="flyout__column flyout__column-stamp">
+        <ul class="flyout__group">
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">New Releases</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
+          </li>
+          <li class="flyout__group-item">
+            <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
+          </li>
+          <li>
+            <a href="#" class="secondary-list-item--flat promo-item">
+              <img src="./img/pedal.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END: Site Navigation Bar Desktop Flyout -->
+
+  <!-- START: Site Navigation Bar Mobile Flyout -->
+  <div class="flyout__mobile-overlay" data-site-m-close></div>
+  <div class="flyout__mobile-nav" data-site-m-root>
+    <div class="flyout__primary-nav primary" data-site-m-outlet="primary"></div>
+    <div class="flyout__primary-nav secondary" data-site-m-outlet="secondary"></div>
+    <div class="flyout__primary-nav tertiary" data-site-m-outlet="tertiary"></div>
+  </div>
+  <!-- END: Site Navigation Bar Mobile Flyout -->
+  <!-- END: Site Navigation Bar -->
 </div>
-<!-- END: Global Navigation Bar Locale Flyout -->
-
-<!-- START: Site Navigation Bar Desktop Flyout -->
-<nav class="flyout__desktop-nav" data-site-link="*" data-site-root>
-  <div class="flyout__container" data-site-outlet="0">
-    <div class="flyout__column flyout__column-stamp">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">New Releases</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Best Sellers</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">10% off guitar picks</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Tremolo Pedal Make waves!</a>
-        </li>
-        <li>
-          <a href="#" class="secondary-list-item--flat promo-item">
-            <img src="./img/pedal.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="flyout__column">
-      <ul class="flyout__group">
-        <li class="flyout__group-item" data-site-category="0">
-          <a href="#" class="secondary-list-item--flat">Major Strings Cateogry</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="0">
-          <a href="#" class="tertiary-list-item">Major Strings Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item" data-site-category="1">
-          <a href="#" class="secondary-list-item">Minor Strings Category</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="1">
-          <a href="#" class="tertiary-list-item">Minor Strings Sub-category 1</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="1">
-          <a href="#" class="tertiary-list-item tertiary-list-item--all">Minor Strings See all</a>
-        </li>
-      </ul>
-    </div>
-    <div class="flyout__column">
-      <ul class="flyout__group">
-        <li class="flyout__group-item" data-site-category="2">
-          <a href="#" class="secondary-list-item--flat">Major Strings 2 Cateogry</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="2">
-          <a href="#" class="tertiary-list-item">Major Strings 2 Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item" data-site-category="3">
-          <a href="#" class="secondary-list-item">Minor Strings 3 Category</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="3">
-          <a href="#" class="tertiary-list-item">Minor Strings 3 Sub-category 1</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="3">
-          <a href="#" class="tertiary-list-item tertiary-list-item--all">Minor Strings 3 See all</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="flyout__container" data-site-outlet="1">
-    <div class="flyout__column flyout__column-stamp">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">New Releases</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Best Sellers</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">10% off guitar picks</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Tremolo Pedal Make waves!</a>
-        </li>
-        <li>
-          <a href="#" class="secondary-list-item--flat promo-item">
-            <img src="./img/pedal.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="flyout__column">
-      <ul class="flyout__group">
-        <li class="flyout__group-item" data-site-category="0">
-          <a href="#" class="secondary-list-item--flat">Major Accessories</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="0">
-          <a href="#" class="tertiary-list-item">Major Accessories Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item" data-site-category="1">
-          <a href="#" class="secondary-list-item">Minor Accessories</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="1">
-          <a href="#" class="tertiary-list-item">Minor Accessories Sub-category 1</a>
-        </li>
-        <li class="flyout__group-item" data-site-subcategory="1">
-          <a href="#" class="tertiary-list-item tertiary-list-item--all">Minor Accessories See all</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="flyout__container" data-site-outlet="2">
-    <div class="flyout__column flyout__column-stamp">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">New Releases</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Best Sellers</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">10% off guitar picks</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Tremolo Pedal Make waves!</a>
-        </li>
-        <li>
-          <a href="#" class="secondary-list-item--flat promo-item">
-            <img src="./img/pedal.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="flyout__column">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Category 1</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item">Category 2</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="flyout__container" data-site-outlet="3">
-    <div class="flyout__column flyout__column-stamp">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">New Releases</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
-        </li>
-        <li>
-          <a href="#" class="secondary-list-item--flat promo-item">
-            <img src="./img/pedal.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="flyout__column">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Category 1</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item">Category 2</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="flyout__container" data-site-outlet="4">
-    <div class="flyout__column flyout__column-stamp">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">New Releases</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
-        </li>
-        <li>
-          <a href="#" class="secondary-list-item--flat promo-item">
-            <img src="./img/pedal.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="flyout__column">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Category 1</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item">Category 2</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="flyout__column">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Category 1</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-
-
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item">Category 2</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-        </li>
-      </ul>
-    </div>
-    <div class="flyout__column">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat">Category 1</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-
-
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item">Category 2</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item">Sub-category 1</a>
-        </li>
-
-        <li class="flyout__group-item">
-          <a href="#" class="tertiary-list-item tertiary-list-item--all">See all</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="flyout__container" data-site-outlet="5">
-    <div class="flyout__column flyout__column-stamp">
-      <ul class="flyout__group">
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">New Releases</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Best Sellers</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">10% off guitar picks</a>
-        </li>
-        <li class="flyout__group-item">
-          <a href="#" class="secondary-list-item--flat ">Tremolo Pedal Make waves!</a>
-        </li>
-        <li>
-          <a href="#" class="secondary-list-item--flat promo-item">
-            <img src="./img/pedal.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- END: Site Navigation Bar Desktop Flyout -->
-
-<!-- START: Site Navigation Bar Mobile Flyout -->
-<div class="flyout__mobile-overlay" data-site-m-close></div>
-<div class="flyout__mobile-nav" data-site-m-root>
-  <div class="flyout__primary-nav primary" data-site-m-outlet="primary"></div>
-  <div class="flyout__primary-nav secondary" data-site-m-outlet="secondary"></div>
-  <div class="flyout__primary-nav tertiary" data-site-m-outlet="tertiary"></div>
-</div>
-<!-- END: Site Navigation Bar Mobile Flyout -->
 
 </body>
 

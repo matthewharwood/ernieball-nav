@@ -49,6 +49,7 @@ $font-size: 12;
   background: $white-off;
   border-left: 1px solid $gray-1;
   height: 100%;
+  overflow: auto;
   position: fixed;
   transition: all cubic-bezier(0.4, 0.0, 0.2, 1) 198ms;
   width: 80%;
@@ -83,21 +84,41 @@ $font-size: 12;
   display: flex;
   height: 105px;
   justify-content: center;
+  position: relative;
   width: 42%;
+
+  .flyout__mobile-nav-item-icon {
+    left: 0;
+    margin-top: -13px;
+    position: absolute;
+    top: 50%;
+  }
+  .left-icon {
+    left: auto;
+    right: 0;
+  }
+
+  .flyout__mobile-nav-item-label {
+    padding: 0;
+  }
 }
 
 .flyout__mobile-nav-item-label {
   align-items: center;
   display: flex;
   flex: 1;
+  font-size: rem($font-size-m);
   font-weight: 700;
   justify-content: center;
-  padding-left: 40px;
+  padding-left: 20px;
   text-transform: uppercase;
+
+  @include bp(tablet) {
+    font-size: rem($font-size);
+  }
 
   &.left-align {
     justify-content: flex-start;
-    padding-left: 36px;
   }
 }
 
@@ -134,7 +155,6 @@ $font-size: 12;
 
   &.left-icon {
     padding: 0 0 0 20px;
-
     transform: rotate(180deg);
   }
 }

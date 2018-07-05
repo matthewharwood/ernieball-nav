@@ -76,18 +76,11 @@ const getShowHideListItems = () => {
     const int = JSON.parse(getAttributeVal(item, DataAttrs.MOBILE_LINK));
 
     if (int[0] !== selections[RouteMapKeys.PRIMARY] && int[1] !== selections[RouteMapKeys.SECONDARY]) {
-      console.log(int, "hide", selections[RouteMapKeys.PRIMARY], selections[RouteMapKeys.SECONDARY]);
       hideParent(item);
     } else {
-      console.log(int, "show", selections[RouteMapKeys.PRIMARY], selections[RouteMapKeys.SECONDARY]);
       showParent(item);
     }
   });
-  // console.log(allSecondaryLinks, "all Mobile links");
-  // console.log(allTertiaryLinks, "all Mobile links");
-
-
-  // const allMobileLinksParents =
 };
 
 export class MobileNav {
@@ -152,7 +145,6 @@ export class MobileNav {
   private static getShowHideListItems() {
     const hideParent = (item) => item.parentElement.style.display = "none";
     const showParent = (item) => item.parentElement.style.display = "flex";
-    const resetAll = (items) => items.forEach(item => item.parentElement.style.display = "flex");
     const allSecondaryLinks = document.querySelectorAll(`[${DataAttrs.MOBILE_LINK_SECONDARY}]`);
     const allTertiaryLinks = document.querySelectorAll(`[${DataAttrs.MOBILE_LINK_TERTIARY}]`);
     const linkVisibility = (links, selector) => {
@@ -171,11 +163,8 @@ export class MobileNav {
       const int = JSON.parse(getAttributeVal(item, DataAttrs.MOBILE_LINK));
 
       if (int[0] === selections[RouteMapKeys.PRIMARY] && int[1] === selections[RouteMapKeys.SECONDARY]) {
-
-        console.log(int, "show", selections[RouteMapKeys.PRIMARY], selections[RouteMapKeys.SECONDARY]);
         showParent(item);
       } else {
-        console.log(int, "hide", selections[RouteMapKeys.PRIMARY], selections[RouteMapKeys.SECONDARY]);
         hideParent(item);
       }
     });
@@ -186,16 +175,13 @@ export class MobileNav {
     const isSecond = pane === 1;
     const isThird = pane === 2;
     if (event) {
-
       if (isFirst) {
-
         selections.primary = attrToInt(event, DataAttrs.MOBILE_LINK);
       } else if (isSecond) {
         selections.secondary = attrToInt(event, DataAttrs.MOBILE_LINK);
       } else if (isThird) {
         selections.tertiary = attrToInt(event, DataAttrs.MOBILE_LINK);
       }
-      console.log(selections);
     }
 
     if (direction === "next") {
@@ -213,11 +199,9 @@ export class MobileNav {
       if (isThird) {
         (LinkSelectors.MOBILE_OUTLETS as any)[2].style.transform = `translateX(100%)`;
       }
-    } else {
-
     }
+
     MobileNav.run();
-    console.log(selections);
     MobileNav.getShowHideListItems();
   }
 
@@ -315,8 +299,6 @@ export class MobileNav {
 
     const listItems = () => {
       let template = "";
-
-      console.log(routes.get(RouteMapKeys.TERTIARY));
       routes.get(RouteMapKeys.TERTIARY).forEach((mapItems, pIndex) => {
         if (mapItems) {
           Object.keys(mapItems)
