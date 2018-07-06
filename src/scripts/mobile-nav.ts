@@ -1,16 +1,16 @@
-import { ClassNames, DataAttrs, EventTypes } from "./enums";
+import { ClassNames, DataAttrs, EventTypes } from './enums';
 
-const ANCHOR = "a";
+const ANCHOR = 'a';
 const BASE_TEN = 10;
 const RouteMapKeys = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
-  TERTIARY: "tertiary"
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  TERTIARY: 'tertiary',
 };
 const LinkClasses = {
-  PRIMARY: "site-navigation__link",
-  SECONDARY: "secondary-list-item--flat",
-  TERTIARY: "tertiary-list-item"
+  PRIMARY: 'site-navigation__link',
+  SECONDARY: 'secondary-list-item--flat',
+  TERTIARY: 'tertiary-list-item',
 };
 const selectByOutlet = (parent, selector) =>
   parent.querySelectorAll(`[${selector}]`);
@@ -25,20 +25,20 @@ const LinkSelectors = {
   PRIMARY: document.querySelectorAll(`.${LinkClasses.PRIMARY}`),
   PRIMARY_OUTLETS: document.querySelectorAll(`[${DataAttrs.OUTLET}]`),
   SECONDARY: document.querySelectorAll(`.${LinkClasses.SECONDARY}`),
-  TERTIARY: document.querySelectorAll(`.${LinkClasses.TERTIARY}`)
+  TERTIARY: document.querySelectorAll(`.${LinkClasses.TERTIARY}`),
 };
 
 const anchorize = item => {
   return {
-    href: item.getAttribute("href"),
-    label: item.textContent
+    href: item.getAttribute('href'),
+    label: item.textContent,
   };
 };
 const queryAnchors = (item: HTMLElement) => item.querySelector(ANCHOR);
 const selections = {
   primary: 0,
   secondary: 0,
-  tertiary: 0
+  tertiary: 0,
 };
 const parseTen = val => parseInt(val, BASE_TEN);
 const getAttributeVal = (val, attr) => val.attributes.getNamedItem(attr).value;
@@ -59,10 +59,10 @@ const groupByAttrIdAndSanatize = (acc, val: HTMLElement) => {
 };
 
 const getShowHideListItems = () => {
-  const hideParent = item => (item.parentElement.style.display = "none");
-  const showParent = item => (item.parentElement.style.display = "flex");
+  const hideParent = item => (item.parentElement.style.display = 'none');
+  const showParent = item => (item.parentElement.style.display = 'flex');
   const resetAll = items =>
-    items.forEach(item => (item.parentElement.style.display = "flex"));
+    items.forEach(item => (item.parentElement.style.display = 'flex'));
   const allSecondaryLinks = document.querySelectorAll(
     `[${DataAttrs.MOBILE_LINK_SECONDARY}]`
   );
@@ -144,8 +144,8 @@ export class MobileNav {
     Array.from(LinkSelectors.MOBILE_CLOSE).forEach(t =>
       t.classList.remove(ClassNames.ACTIVE)
     );
-    MobileNav.paginate("prev", 2);
-    MobileNav.paginate("prev", 1);
+    MobileNav.paginate('prev', 2);
+    MobileNav.paginate('prev', 1);
   }
 
   private static open() {
@@ -163,8 +163,8 @@ export class MobileNav {
   }
 
   private static getShowHideListItems() {
-    const hideParent = item => (item.parentElement.style.display = "none");
-    const showParent = item => (item.parentElement.style.display = "flex");
+    const hideParent = item => (item.parentElement.style.display = 'none');
+    const showParent = item => (item.parentElement.style.display = 'flex');
     const allSecondaryLinks = document.querySelectorAll(
       `[${DataAttrs.MOBILE_LINK_SECONDARY}]`
     );
@@ -197,7 +197,7 @@ export class MobileNav {
     });
   }
 
-  private static paginate(direction = "", pane, event = null) {
+  private static paginate(direction = '', pane, event = null) {
     const isFirst = pane === 0;
     const isSecond = pane === 1;
     const isThird = pane === 2;
@@ -211,14 +211,14 @@ export class MobileNav {
       }
     }
 
-    if (direction === "next") {
+    if (direction === 'next') {
       if (isFirst) {
         (LinkSelectors.MOBILE_OUTLETS as any)[1].style.transform = `translateX(0)`;
       }
       if (isSecond) {
         (LinkSelectors.MOBILE_OUTLETS as any)[2].style.transform = `translateX(0)`;
       }
-    } else if (direction === "prev") {
+    } else if (direction === 'prev') {
       if (isSecond) {
         (LinkSelectors.MOBILE_OUTLETS as any)[1].style.transform = `translateX(100%)`;
       }
@@ -247,7 +247,7 @@ export class MobileNav {
     (window as any).paginate = this.paginate;
 
     const listItems = () => {
-      let items = "";
+      let items = '';
 
       routes.get(RouteMapKeys.PRIMARY).forEach((item, index) => {
         if (item) {
@@ -257,8 +257,8 @@ export class MobileNav {
                   data-site-m-link="${index}" 
                   href="${item.href}" onclick="paginate('next', 0, this)">
                 <span class="flyout__mobile-nav-item-label left-align">${
-            item.label
-            }</span>
+                  item.label
+                }</span>
                 <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
               </a>
             </li>
@@ -284,7 +284,7 @@ export class MobileNav {
     (window as any).paginate = this.paginate;
 
     const listItems = () => {
-      let template = "";
+      let template = '';
       routes.get(RouteMapKeys.SECONDARY).forEach((items, index) => {
         if (items) {
           items.forEach(item => {
@@ -297,7 +297,7 @@ export class MobileNav {
                 data-site-m-link="${index}" 
                 onclick="paginate('next', 1, this)">
                 <span class="flyout__mobile-nav-item-label left-align">${
-                item.label
+                  item.label
                 }</span>
                 <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
               </a>
@@ -326,7 +326,7 @@ export class MobileNav {
     (window as any).closeMobileNavigation = this.close;
 
     const listItems = () => {
-      let template = "";
+      let template = '';
       routes.get(RouteMapKeys.TERTIARY).forEach((mapItems, pIndex) => {
         if (mapItems) {
           Object.keys(mapItems).forEach(key =>
@@ -338,8 +338,8 @@ export class MobileNav {
                       data-site-m-link="[${pIndex}, ${key}]" 
                       href="${item.href}">
                     <span class="flyout__mobile-nav-item-label left-align">${
-                item.label
-                }</span>
+                      item.label
+                    }</span>
                     <span class="flyout__mobile-nav-item-icon"><img src="./img/chevron.svg" alt=""></span>
                   </a>
                 </li>
