@@ -2,6 +2,7 @@ import { ClassNames, DataAttrs, EventTypes } from './enums';
 
 const ANCHOR = 'a';
 const BASE_TEN = 10;
+let RouteMap;
 const RouteMapKeys = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
@@ -98,7 +99,7 @@ const getShowHideListItems = () => {
 export class MobileNav {
   public static run() {
     (window as any).currentMenuPage = 1;
-    const RouteMap = this.createMaps();
+    RouteMap = this.createMaps();
 
     const setAllRouteMap = (item, i) => {
       const cats = this.getCats(DataAttrs.CATEGORY, i)
@@ -229,6 +230,7 @@ export class MobileNav {
 
     MobileNav.run();
     MobileNav.getShowHideListItems();
+    MobileNav.changeLabels()
   }
 
   private static createMaps() {
@@ -315,7 +317,8 @@ export class MobileNav {
       <ul class="flyout__mobile-nav-list">
         <li class="flyout__mobile-nav-item-header">
           <span class="flyout__mobile-nav-item-icon" onclick="paginate('prev', 1)"><img src="./img/chevron.svg" alt=""></span>
-          <span class="flyout__mobile-nav-item-label">Menu</span>
+          <span class="flyout__mobile-nav-item-label" data-site-m-secondary-label>Menu</span>
+          <span class="flyout__mobile-nav-item-icon left-icon" onclick="closeMobileNavigation()"><img src="./img/close.svg" alt=""></span>
         </li>
         ${listItems()}
       </ul>
@@ -358,10 +361,19 @@ export class MobileNav {
           <span class="flyout__mobile-nav-item-icon"
                 onclick="paginate('prev', 2)">
               <img src="./img/chevron.svg" alt=""></span>
-          <span class="flyout__mobile-nav-item-label">Menu</span>
+          <span class="flyout__mobile-nav-item-label" data-site-m-tertiary-label>Menu</span>
+          <span class="flyout__mobile-nav-item-icon left-icon" onclick="closeMobileNavigation()"><img src="./img/close.svg" alt=""></span>
         </li>
         ${listItems()}
       </ul>
     `;
+  }
+
+  private static changeLabels() {
+    const secondary: HTMLElement = document.querySelector(`[${DataAttrs.MOBILE_LINK_SECONDARY_LABEL}]`);
+    const tertiary = document.querySelector(`[${DataAttrs.MOBILE_LINK_TERTIARY_LABEL}]`);
+    secondary.innerHTML = RouteMap.get(RouteMapKeys.PRIMARY).get(selections[RouteMapKeys.PRIMARY]).label;
+    tertiary.innerHTML = RouteMap.get(RouteMapKeys.SECONDARY).get(selections[RouteMapKeys.SECONDARY]).label;
+    console.log(selections, secondary, tertiary, RouteMap);
   }
 }
