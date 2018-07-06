@@ -38,7 +38,7 @@ const anchorize = item => {
 const queryAnchors = (item: HTMLElement) => item.querySelector(ANCHOR);
 const selections = {
   primary: 0,
-  secondary: 0,
+  secondary: [],
   tertiary: 0,
 };
 const parseTen = val => parseInt(val, BASE_TEN);
@@ -126,7 +126,7 @@ export class MobileNav {
     );
   }
 
-  private static getShowHideListItems(selections) {
+  private static getShowHideListItems() {
     const hideParent = item => (item.parentElement.style.display = 'none');
     const showParent = item => (item.parentElement.style.display = 'flex');
     const allSecondaryLinks = document.querySelectorAll(
@@ -151,7 +151,7 @@ export class MobileNav {
       hideParent(item);
       if (
         int[0] === selections[RouteMapKeys.PRIMARY] &&
-        int[1] === selections[RouteMapKeys.SECONDARY]
+        int[1] === selections[RouteMapKeys.SECONDARY][1]
       ) {
         showParent(item);
       }
@@ -165,13 +165,10 @@ export class MobileNav {
     if (event) {
       if (isFirst) {
         selections.primary = attrToInt(event, DataAttrs.MOBILE_LINK);
-        console.log(selections, event.attributes.getNamedItem(DataAttrs.MOBILE_LINK).value, 'prmary');
       } else if (isSecond) {
-        selections.secondary = JSON.parse(getAttributeVal(event, DataAttrs.MOBILE_LINK))[1];
-        console.log(selections, JSON.parse(getAttributeVal(event, DataAttrs.MOBILE_LINK))[1], 's');
+        selections.secondary = JSON.parse(getAttributeVal(event, DataAttrs.MOBILE_LINK));
       } else if (isThird) {
         selections.tertiary = attrToInt(event, DataAttrs.MOBILE_LINK);
-        console.log(selections, event.attributes.getNamedItem(DataAttrs.MOBILE_LINK).value, 't');
       }
     }
 
@@ -190,9 +187,9 @@ export class MobileNav {
         (LinkSelectors.MOBILE_OUTLETS as any)[2].style.transform = `translateX(100%)`;
       }
     }
-    console.log(selections)
     MobileNav.run();
-    MobileNav.getShowHideListItems(selections);
+    MobileNav.getShowHideListItems();
+    console.log(selections, RouteMap);
     MobileNav.changeLabels();
   }
 
@@ -342,8 +339,11 @@ export class MobileNav {
     secondary.innerHTML = RouteMap.get(RouteMapKeys.PRIMARY).get(
       selections[RouteMapKeys.PRIMARY]
     ).label;
-    tertiary.innerHTML = RouteMap.get(RouteMapKeys.SECONDARY).get(
-      selections[RouteMapKeys.SECONDARY]
-    ).label;
+
+    if(selections.secondary.length >= 2) {
+      tertiary.innerHTML = RouteMap.get(RouteMapKeys.SECONDARY).get(
+        selections[RouteMapKeys.SECONDARY][0]
+      )[selections[RouteMapKeys.SECONDARY][1]].label;
+    }
   }
 }
