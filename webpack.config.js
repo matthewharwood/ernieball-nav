@@ -36,6 +36,17 @@ module.exports = {
         loader: "tslint-loader"
       },
       {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
+      {
         test: /\.(css|sass|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -43,7 +54,7 @@ module.exports = {
             loader: "css-loader",
             options: {
               importLoaders: 1,
-              sourceMap: true
+              sourceMap: true,
             }
           },
           {

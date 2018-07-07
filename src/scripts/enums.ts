@@ -21,6 +21,10 @@ export const DataAttrs = {
   MOBLE_OUTLETS: 'data-site-m-outlet',
   OUTLET: 'data-site-outlet',
   ROOT: 'data-site-root',
+  SEARCH_ACTION: 'data-search-bar-action',
+  SEARCH_INPUT: 'data-search-bar-input',
+  SEARCH_OUTLET: 'data-search-bar-outlet',
+  SEARCH_TRIGGER: 'data-search-bar-trigger',
   SUB_CATEGORY: 'data-site-subcategory',
 };
 

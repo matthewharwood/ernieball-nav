@@ -166,7 +166,9 @@ export class MobileNav {
       if (isFirst) {
         selections.primary = attrToInt(event, DataAttrs.MOBILE_LINK);
       } else if (isSecond) {
-        selections.secondary = JSON.parse(getAttributeVal(event, DataAttrs.MOBILE_LINK));
+        selections.secondary = JSON.parse(
+          getAttributeVal(event, DataAttrs.MOBILE_LINK)
+        );
       } else if (isThird) {
         selections.tertiary = attrToInt(event, DataAttrs.MOBILE_LINK);
       }
@@ -189,7 +191,6 @@ export class MobileNav {
     }
     MobileNav.run();
     MobileNav.getShowHideListItems();
-    console.log(selections, RouteMap);
     MobileNav.changeLabels();
   }
 
@@ -293,7 +294,7 @@ export class MobileNav {
       routes.get(RouteMapKeys.TERTIARY).forEach((mapItems, pIndex) => {
         if (mapItems) {
           Object.keys(mapItems).forEach(key =>
-            mapItems[key].forEach((item) => {
+            mapItems[key].forEach(item => {
               template += `
                 <li class="flyout__mobile-nav-item-select">
                   <a class="flyout__mobile-nav-item-anchor"
@@ -340,7 +341,7 @@ export class MobileNav {
       selections[RouteMapKeys.PRIMARY]
     ).label;
 
-    if(selections.secondary.length >= 2) {
+    if (selections.secondary.length >= 2) {
       tertiary.innerHTML = RouteMap.get(RouteMapKeys.SECONDARY).get(
         selections[RouteMapKeys.SECONDARY][0]
       )[selections[RouteMapKeys.SECONDARY][1]].label;

@@ -75,12 +75,16 @@
           <a class="site-navigation__link" href="javascript:void(0)">Accessories</a>
         </li>
       </ul>
+      <div class="site-navigation__search" data-search-bar-outlet>
+        <input type="search" class="site-navigation__search-bar" results=5 data-search-bar-input placeholder="What are you looking for? "/>
+        <button class="site-navigation__search-action" data-search-bar-action><img src="./img/search-white.svg" alt=""></button>
+      </div>
     </div>
     <div class="site-navigation__right">
       <ul class="site-navigation__list-alt">
         <li class="site-navigation__item-alt">
-          <button class="site-navigation__button">
-            <img src="./img/search.svg" alt="">
+          <button class="site-navigation__button site-navigation__button-search" data-search-bar-trigger>
+
           </button>
         </li>
         <li class="site-navigation__item-alt">

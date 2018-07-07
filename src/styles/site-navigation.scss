@@ -24,7 +24,7 @@
 
 .site-navigation__center {
   @include font-bold();
-
+  position: relative;
   align-items: center;
   display: flex;
   flex: 1;
@@ -73,7 +73,7 @@
 
 .site-navigation__right {
   display: flex;
-  flex-basis: 150px;
+  flex-basis: 120px;
   justify-content: flex-end;
 }
 
@@ -120,6 +120,14 @@
   padding: 0 16px;
   position: relative;
   text-decoration: none;
+}
+
+.site-navigation__button-search {
+  background: url('../public/img/search.svg') center center no-repeat;
+
+  &.active {
+    background: url('../public/img/close.svg') center center no-repeat;
+  }
 }
 
 .site-navigation__button-badge {
