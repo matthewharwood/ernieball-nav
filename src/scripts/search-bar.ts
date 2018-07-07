@@ -14,7 +14,7 @@ const LinkSelectors = {
 const DEBOUNCE_TIMER = 250;
 const Breakpoint = {
   SM: 1024,
-}
+};
 export class SearchBar {
   public static run() {
     let resizeTimer;
@@ -27,7 +27,6 @@ export class SearchBar {
         LinkSelectors.INPUT.focus();
       } else {
         LinkSelectors.OUTLET_M.classList.toggle(ClassNames.ACTIVE);
-        console.log(LinkSelectors.INPUT_M);
         LinkSelectors.INPUT_M.focus();
       }
 

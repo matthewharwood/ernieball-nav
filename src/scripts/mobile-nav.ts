@@ -79,6 +79,7 @@ export class MobileNav {
       RouteMap.get(RouteMapKeys.TERTIARY).set(i, subCats);
     };
     this.createListeners();
+    this.toggleForBreakpoints();
     Array.from(LinkSelectors.PRIMARY, setAllRouteMap);
     return RouteMap;
   }
@@ -346,5 +347,30 @@ export class MobileNav {
         selections[RouteMapKeys.SECONDARY][0]
       )[selections[RouteMapKeys.SECONDARY][1]].label;
     }
+  }
+
+  private static toggleForBreakpoints() {
+    const DEBOUNCE_TIMER = 250;
+    const Breakpoint = {
+      SM: 1024,
+    };
+    let resizeTimer;
+    const goingFromSmallToLarge = () => window.innerWidth >= Breakpoint.SM;
+
+    (window as any).addEventListener(EventTypes.RESIZE, () => {
+
+
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+
+        if(goingFromSmallToLarge()) {
+
+          if (LinkSelectors.MOBILE_ROOT.classList.contains(ClassNames.ACTIVE)) {
+            MobileNav.close();
+          }
+        }
+      }, DEBOUNCE_TIMER);
+
+    });
   }
 }

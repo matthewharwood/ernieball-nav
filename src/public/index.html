@@ -87,7 +87,7 @@
           </button>
         </li>
         <li class="site-navigation__item-alt">
-          <button class="site-navigation__button">
+          <button class="site-navigation__button" data-site-cart-trigger>
             <img src="./img/cart.svg" alt="">
             <div class="site-navigation__button-badge">
               <span class="site-navigation__button-badge-count">1</span>
@@ -323,6 +323,11 @@
   </div>
   <!-- END: Site Navigation Bar Mobile Flyout -->
   <!-- END: Site Navigation Bar -->
+
+  <div class="flyout__overlay-cart" data-site-m-close-cart></div>
+  <div class="flyout__mobile-nav-cart" data-site-m-root-cart>
+    <div data-site-m-close-cart-inner><img src="img/close.svg" alt=""></div>
+  </div>
 </div>
 
 </body>

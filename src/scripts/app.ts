@@ -1,3 +1,4 @@
+import { Cart } from "./cart";
 import { DesktopNav } from './desktop-nav';
 import { LocaleDropdown } from './locale-dropdown';
 import { MobileNav } from './mobile-nav';
@@ -7,9 +8,9 @@ class NavigationApp {
   public static run() {
     LocaleDropdown.run();
     DesktopNav.run();
-    const routes = MobileNav.run();
-    MobileNav.render(routes);
+    MobileNav.render(MobileNav.run());
     SearchBar.run();
+    Cart.run();
   }
 }
 

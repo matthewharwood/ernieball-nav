@@ -6,6 +6,10 @@ export const ClassNames = {
 };
 
 export const DataAttrs = {
+  CART_CLOSE: 'data-site-m-close-cart',
+  CART_CLOSE_INNER: 'data-site-m-close-cart-inner',
+  CART_OUTLET: 'data-site-m-root-cart',
+  CART_TRIGGER: 'data-site-cart-trigger',
   CATEGORY: 'data-site-category',
   DROPDOWN: 'data-lang-dropdown',
   DROPDOWN_LIST: 'data-lang-dropdown-list',
