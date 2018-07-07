@@ -23,7 +23,9 @@ export const DataAttrs = {
   ROOT: 'data-site-root',
   SEARCH_ACTION: 'data-search-bar-action',
   SEARCH_INPUT: 'data-search-bar-input',
+  SEARCH_INPUT_M: 'data-search-bar-input-m',
   SEARCH_OUTLET: 'data-search-bar-outlet',
+  SEARCH_OUTLET_MOBILE: 'data-search-bar-outlet-mobile',
   SEARCH_TRIGGER: 'data-search-bar-trigger',
   SUB_CATEGORY: 'data-site-subcategory',
 };

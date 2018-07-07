@@ -1,23 +1,49 @@
 @import './vars';
 @import './colors';
 @import './functions';
-
 .site-navigation__search {
-  position: absolute;
-  left: 0;
   width: 100%;
   background: $white;
-  bottom: -7px;
   height: calc(100% + 13px);
   display: none;
   visibility: hidden;
+  position: absolute;
+}
 
-  &.active {
-    display: block;
-    visibility: visible;
+.site-navigation__center {
+  .site-navigation__search {
+    left: 0;
+    bottom: -7px;
+
+    @include bp(sm) {
+      &.active {
+        display: block;
+        visibility: visible;
+      }
+    }
   }
 }
 
+.mobile-search {
+  width: 100%;
+  position: fixed;
+  top: 106px;
+  display: none;
+  visibility: hidden;
+  height: rem(66);
+
+  .site-navigation__search {
+    height: rem(66);
+    display: flex;
+    visibility: visible;
+    position: relative;
+  }
+
+  &.active {
+    display: flex;
+    visibility: visible;
+  }
+}
 .site-navigation__search-bar {
   position: absolute;
   bottom: 0;
